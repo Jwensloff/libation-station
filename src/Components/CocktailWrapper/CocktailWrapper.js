@@ -1,7 +1,7 @@
 import SingleCocktail from '../SingleCocktail/SingleCocktail';
 import './CocktailWrapper.css';
 
-function CocktailWrapper({ cocktails }) {
+function CocktailWrapper({ cocktails, setFavorites, addToFavorites }) {
 
   const cocktailComponents = cocktails.map((cocktail) => {
     let id = Date.now()
@@ -11,6 +11,7 @@ function CocktailWrapper({ cocktails }) {
           ingredients={cocktail.ingredients}
           instructions={cocktail.instructions}
           id={id}
+          addToFavorites={addToFavorites}
         />
       );
     });
