@@ -5,6 +5,7 @@ function SingleCocktail({
   ingredients,
   instructions,
   addToFavorites,
+  deleteFavorite,
   id,
 }) {
   let formattedIngredients = ingredients.map((ingredient) => {
@@ -15,9 +16,10 @@ function SingleCocktail({
     id, 
     name,
     ingredients,
-    instructions
+    instructions, 
+    isFavorite: true
   }
-  
+
   return (
     <div className='single-cocktail' id={id}>
       <button onClick={() =>addToFavorites(newCocktail)}>Add to favorites</button>

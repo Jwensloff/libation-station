@@ -11,12 +11,18 @@ function App() {
   const addToFavorites = (cocktail) => {
     setFavorites((prev) => [...prev, cocktail]);
   };
+
+  const deleteFavorite = (id) => {
+    const filteredCocktails = favorites.filter(cocktail => cocktail.id !== id)
+    setFavorites(filteredCocktails)
+  }
+
   console.log('faves',favorites)
   return (
     <div className='App'>
       <NavBar />
       <Search setCocktails={setCocktails} getCocktails={getCocktails} />
-      <CocktailWrapper addToFavorites={addToFavorites} cocktails={cocktails} />
+      <CocktailWrapper deleteFavorite={deleteFavorite} addToFavorites={addToFavorites} cocktails={cocktails} />
     </div>
   );
 }
