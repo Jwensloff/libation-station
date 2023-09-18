@@ -15,6 +15,6 @@ function CocktailWrapper({ cocktails }) {
       );
     });
   
-  return <section> {cocktailComponents} </section>;
+  return <section className='cocktail-wrapper'> {cocktailComponents} </section>;
 }
 export default CocktailWrapper;
