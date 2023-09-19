@@ -3,23 +3,25 @@ import './FavoritesPage.css';
 import SingleCocktail from '../SingleCocktail/SingleCocktail';
 
 function FavoritesPage({ favorites }) {
-  // console.log('from faves page',favorites)
+  console.log('from faves page',favorites)
   // useEffect
-  const favorited = favorites.map((favorite) => {
-    // console.log('favorites',favorite.name);
-    <SingleCocktail
-      name={favorite.name}
-      //         ingredients={finalIngredients}
-      //         instructions={cocktail.strInstructions}
-      //         id={cocktail.idDrink}
-      //         img={cocktail.strDrinkThumb}
-      //         addToFavorites={addToFavorites}
-      //         deleteFavorite={deleteFavorite}
-      //         key={cocktail.idDrink}
-    ></SingleCocktail>;
+  const favorited = favorites.map((cocktail) => {
+    console.log('favorites', cocktail.name);
+    return <SingleCocktail 
+    name={cocktail.name} 
+    id={cocktail.id} 
+    ingredients={cocktail.ingredients}
+    instructions={cocktail.instructions}
+    img={cocktail.img}
+    key={cocktail.id} />
   });
 
-  return <div>{favorited}</div>;
+  return (
+    <div className='favorited-grid'>
+      <div>HELLOOOOOO</div>
+      <div>{favorited}</div>
+    </div>
+  );
 }
 
 export default FavoritesPage;

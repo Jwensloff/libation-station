@@ -23,7 +23,7 @@ function App() {
     setFavorites(filteredCocktails);
   };
 
-  // console.log('faves',favorites);
+  console.log('faves',favorites);
 
   return (
     <div className='App'>

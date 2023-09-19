@@ -1,15 +1,16 @@
 import { useState } from 'react';
 import './Search.css';
 
-function Search({setCocktails, getCocktails }) {
+function Search({ setCocktails, getCocktails }) {
   const [newCocktail, setNewCocktail] = useState('');
 
   const searchForCocktail = (e) => {
     e.preventDefault();
-    getCocktails(newCocktail)
-    .then((data) => {
-      console.log('data ---->',data)
-      setCocktails(data.drinks)});
+    getCocktails(newCocktail).then((data) => {
+      console.log('data ---->', data);
+      setCocktails(data.drinks);
+      setNewCocktail('');
+    });
   };
 
   return (

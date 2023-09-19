@@ -9,9 +9,9 @@ function SingleCocktail({
   addToFavorites,
   deleteFavorite,
 }) {
-  let formattedIngredients = ingredients.map((ingredient) => {
-    return <li>{ingredient}</li>;
-  });
+  // let formattedIngredients = ingredients.map((ingredient) => {
+  //   return <li>{ingredient}</li>;
+  // });
 
   const newCocktail = {
     id, 
@@ -19,6 +19,7 @@ function SingleCocktail({
     ingredients,
     instructions, 
     img,
+    deleteFavorite,
     isFavorite: true
   }
 
@@ -26,7 +27,7 @@ function SingleCocktail({
     <div className='single-cocktail' id={id}>
       <button onClick={() =>addToFavorites(newCocktail)}>Add to favorites</button>
       <p>Name: {name}</p>
-      <ul className='ingredients-list'>Ingredients:{formattedIngredients}</ul>
+      <ul className='ingredients-list'>Ingredients:{ingredients}</ul>
       <p>Instructions: {instructions}</p>
       <img className='img-container' src={img} alt={name}/>
     </div>
