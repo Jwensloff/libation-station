@@ -4,10 +4,10 @@ function SingleCocktail({
   name,
   ingredients,
   instructions,
-  addToFavorites,
-  deleteFavorite,
   id,
   img,
+  addToFavorites,
+  deleteFavorite,
 }) {
   // console.log('ing',ingredients)
   let formattedIngredients = ingredients.map((ingredient) => {
@@ -19,6 +19,7 @@ function SingleCocktail({
     name,
     ingredients,
     instructions, 
+    img,
     isFavorite: true
   }
 

@@ -7,20 +7,18 @@ function CocktailWrapper({
   addToFavorites,
   deleteFavorite,
 }) {
-  // console.log('HERE', cocktails[0]);
   const cocktailComponents = cocktails.map((cocktail) => {
+    
     const keys = Object.keys(cocktail);
-
     const ingredients = [];
     const measurements = [];
     let finalIngredients = [];
+
     keys.map((key) => {
       if (key.includes('Ingredient') && cocktail[key]) {
-        // console.log(cocktail[key]);
         ingredients.push(cocktail[key]);
       }
       if (key.includes('strMeasure') && cocktail[key]) {
-        // console.log(cocktail[key])
         measurements.push(cocktail[key]);
       }
       measurements.map((measurement, index) => {
@@ -31,9 +29,7 @@ function CocktailWrapper({
       });
       return finalIngredients;
     });
-    // console.log(finalIngredients);
 
-    // console.log('ing.', cocktail.strIngredient);
     return (
       <SingleCocktail
         name={cocktail.strDrink}
