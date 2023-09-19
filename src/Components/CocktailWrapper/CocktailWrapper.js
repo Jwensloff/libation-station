@@ -1,21 +1,53 @@
 import SingleCocktail from '../SingleCocktail/SingleCocktail';
 import './CocktailWrapper.css';
 
-function CocktailWrapper({ cocktails, setFavorites, addToFavorites, deleteFavorite }) {
-  console.log('HERE', cocktails[5])
+function CocktailWrapper({
+  cocktails,
+  setFavorites,
+  addToFavorites,
+  deleteFavorite,
+}) {
+  // console.log('HERE', cocktails[0]);
   const cocktailComponents = cocktails.map((cocktail) => {
-      return (
-        <SingleCocktail
-          name={cocktail.strDrink}
-          ingredients={cocktail.ingredients}
-          instructions={cocktail.strInstructions}
-          id={cocktail.idDrink}
-          addToFavorites={addToFavorites}
-          deleteFavorite={deleteFavorite}
-        />
-      );
+    const keys = Object.keys(cocktail);
+
+    const ingredients = [];
+    const measurements = [];
+    let finalIngredients = [];
+    keys.map((key) => {
+      if (key.includes('Ingredient') && cocktail[key]) {
+        // console.log(cocktail[key]);
+        ingredients.push(cocktail[key]);
+      }
+      if (key.includes('strMeasure') && cocktail[key]) {
+        // console.log(cocktail[key])
+        measurements.push(cocktail[key]);
+      }
+      measurements.map((measurement, index) => {
+        let ing = `${measurement}${ingredients[index]}`;
+        if (!finalIngredients.includes(ing)) {
+          finalIngredients.push(ing);
+        }
+      });
+      return finalIngredients;
     });
-  
+    // console.log(finalIngredients);
+
+    // console.log('ing.', cocktail.strIngredient);
+    return (
+      <SingleCocktail
+        name={cocktail.strDrink}
+        ingredients={finalIngredients}
+        instructions={cocktail.strInstructions}
+        id={cocktail.idDrink}
+        img={cocktail.strDrinkThumb}
+        addToFavorites={addToFavorites}
+        deleteFavorite={deleteFavorite}
+        key={cocktail.idDrink}
+      />
+    );
+  });
+
   return <section className='cocktail-wrapper'> {cocktailComponents} </section>;
 }
 export default CocktailWrapper;

@@ -2,7 +2,7 @@ const getCocktails = (text) => {
   return fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${text}&api_key='1'`)
   
     .then(response => {
-      console.log(response);
+      // console.log(response);
       if (!response.ok) {
         throw new Error(response.statusText); 
       }

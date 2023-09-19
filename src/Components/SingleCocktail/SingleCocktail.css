@@ -1,9 +1,13 @@
 .single-cocktail{
-  width: 40%;
+  /* width: 40%; */
   /* border: 1px solid black; */
   background-color: rgba(1,1,1,0.9);
   color: antiquewhite;
   border-radius: 5px;
+}
+
+.img-container{
+  height:10rem;
 }
 
 .ingredients-list{
