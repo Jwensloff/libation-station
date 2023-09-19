@@ -26,18 +26,32 @@ function App() {
   return (
     <div className='App'>
       <NavBar />
-      <Routes>
-        <Route path='/favorites' element={<FavoritesPage favorites={favorites}/>}/>
-        <Route path='/' element={<>
-        <Search setCocktails={setCocktails} getCocktails={getCocktails} />
-        <CocktailWrapper
-          deleteFavorite={deleteFavorite}
-          addToFavorites={addToFavorites}
-          cocktails={cocktails}
-        />
-        </>}/>
-        
-      </Routes>
+      <div className='main'>
+        <div className='big-box-border'>
+          <Routes>
+            <Route
+              path='/favorites'
+              element={<FavoritesPage favorites={favorites} />}
+            />
+            <Route
+              path='/'
+              element={
+                <>
+                  <Search
+                    setCocktails={setCocktails}
+                    getCocktails={getCocktails}
+                  />
+                  <CocktailWrapper
+                    deleteFavorite={deleteFavorite}
+                    addToFavorites={addToFavorites}
+                    cocktails={cocktails}
+                  />
+                </>
+              }
+            />
+          </Routes>
+        </div>
+      </div>
     </div>
   );
 }
