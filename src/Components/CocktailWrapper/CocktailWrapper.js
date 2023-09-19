@@ -6,6 +6,9 @@ function CocktailWrapper({
   setFavorites,
   addToFavorites,
   deleteFavorite,
+  favorites,
+  isFavorite,
+ setIsFavorite
 }) {
   const cocktailComponents = cocktails.map((cocktail) => {
     
@@ -40,6 +43,9 @@ function CocktailWrapper({
         addToFavorites={addToFavorites}
         deleteFavorite={deleteFavorite}
         key={cocktail.idDrink}
+        favorites={favorites}
+        isFavorite={isFavorite}
+        setIsFavorite={setIsFavorite}
       />
     );
   });

@@ -10,10 +10,10 @@ import FavoritesPage from '../FavoritesPage/FavoritesPage';
 function App() {
   const [cocktails, setCocktails] = useState([]);
   const [favorites, setFavorites] = useState([]);
+  const [isFavorite, setIsFavorite] = useState(false);
 
   const addToFavorites = (cocktail) => {
     setFavorites([...favorites, cocktail]);
-    // console.log('ALL FAVORITES', favorites)
   };
 
   const deleteFavorite = (id) => {
@@ -23,17 +23,22 @@ function App() {
     setFavorites(filteredCocktails);
   };
 
-  console.log('faves',favorites);
+  console.log('faves', favorites);
 
   return (
     <div className='App'>
-      <NavBar />
+      <NavBar isFavorite={isFavorite} setIsFavorite={setIsFavorite} />
       <div className='main'>
         <div className='big-box-border'>
           <Routes>
             <Route
               path='/favorites'
-              element={<FavoritesPage favorites={favorites} />}
+              element={
+                <FavoritesPage
+                  favorites={favorites}
+                  deleteFavorite={deleteFavorite}
+                />
+              }
             />
             <Route
               path='/'
@@ -44,9 +49,12 @@ function App() {
                     getCocktails={getCocktails}
                   />
                   <CocktailWrapper
+                    favorites={favorites}
                     deleteFavorite={deleteFavorite}
                     addToFavorites={addToFavorites}
                     cocktails={cocktails}
+                    isFavorite={isFavorite}
+                    setIsFavorite={setIsFavorite}
                   />
                 </>
               }

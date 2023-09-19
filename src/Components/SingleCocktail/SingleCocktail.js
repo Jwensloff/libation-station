@@ -1,5 +1,8 @@
 import './SingleCocktail.css';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { useState } from 'react';
+<FontAwesomeIcon icon={faXmark} />;
 function SingleCocktail({
   name,
   ingredients,
@@ -8,28 +11,38 @@ function SingleCocktail({
   img,
   addToFavorites,
   deleteFavorite,
+  favorites,
+  isFavorite
 }) {
-  // let formattedIngredients = ingredients.map((ingredient) => {
-  //   return <li>{ingredient}</li>;
-  // });
+
+  let formattedIngredients = ingredients.map((ingredient) => {
+    return <li>{ingredient}</li>;
+  });
 
   const newCocktail = {
-    id, 
+    id,
     name,
     ingredients,
-    instructions, 
+    instructions,
     img,
-    deleteFavorite,
-    isFavorite: true
-  }
-
+    // isFavorite,
+  };
+  console.log('isFave?',isFavorite)
   return (
     <div className='single-cocktail' id={id}>
-      <button onClick={() =>addToFavorites(newCocktail)}>Add to favorites</button>
+      {isFavorite ? (
+        <button onClick={() => addToFavorites(newCocktail)}>
+          <FontAwesomeIcon icon={faStar} />
+        </button>
+      ) : (
+        <button onClick={() => deleteFavorite(id)}>
+          <FontAwesomeIcon icon={faXmark} />
+        </button>
+      )}
       <p>Name: {name}</p>
-      <ul className='ingredients-list'>Ingredients:{ingredients}</ul>
+      <ul className='ingredients-list'>Ingredients:{formattedIngredients}</ul>
       <p>Instructions: {instructions}</p>
-      <img className='img-container' src={img} alt={name}/>
+      <img className='img-container' src={img} alt={name} />
     </div>
   );
 }

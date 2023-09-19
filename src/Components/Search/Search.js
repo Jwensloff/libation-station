@@ -7,7 +7,7 @@ function Search({ setCocktails, getCocktails }) {
   const searchForCocktail = (e) => {
     e.preventDefault();
     getCocktails(newCocktail).then((data) => {
-      console.log('data ---->', data);
+      // console.log('data ---->', data);
       setCocktails(data.drinks);
       setNewCocktail('');
     });
