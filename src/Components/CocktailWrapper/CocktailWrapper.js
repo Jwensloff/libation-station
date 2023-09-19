@@ -22,7 +22,7 @@ function CocktailWrapper({
         measurements.push(cocktail[key]);
       }
       measurements.map((measurement, index) => {
-        let ing = `${measurement}${ingredients[index]}`;
+        let ing = `${measurement} ${ingredients[index]}`;
         if (!finalIngredients.includes(ing)) {
           finalIngredients.push(ing);
         }

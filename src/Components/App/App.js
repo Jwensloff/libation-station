@@ -12,7 +12,8 @@ function App() {
   const [favorites, setFavorites] = useState([]);
 
   const addToFavorites = (cocktail) => {
-    setFavorites((prev) => [...prev, cocktail]);
+    setFavorites([...favorites, cocktail]);
+    // console.log('ALL FAVORITES', favorites)
   };
 
   const deleteFavorite = (id) => {
@@ -22,7 +23,8 @@ function App() {
     setFavorites(filteredCocktails);
   };
 
-  console.log('faves', favorites);
+  // console.log('faves',favorites);
+
   return (
     <div className='App'>
       <NavBar />

@@ -9,7 +9,6 @@ function SingleCocktail({
   addToFavorites,
   deleteFavorite,
 }) {
-  // console.log('ing',ingredients)
   let formattedIngredients = ingredients.map((ingredient) => {
     return <li>{ingredient}</li>;
   });
