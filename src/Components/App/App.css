@@ -1,8 +1,29 @@
 .App {
   text-align: center;
+  height: 100%;
 }
 
+.main {
+  /* background-color: antiquewhite; */
+  height: 93vh;
+  /* padding: 1rrem; */
+  /* background-image: url('../../16447785_v945-tang-09-a.jpg'); */
+  /* background-size: cover; */
+  /* background-repeat: no-repeat; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+.big-box-border {
+  background-color: antiquewhite;
+  height: 90%;
+  width: 90%;
+  border-radius: 5px;
+  padding: 1rem;
+  /* overflow-y: hidden; */
+}
 /* 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -21,7 +42,6 @@
   color: white;
 } */
 
-
 /* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -30,5 +50,3 @@
     transform: rotate(360deg);
   }
 } */
-
-

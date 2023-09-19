@@ -8,8 +8,8 @@ function Search({setCocktails, getCocktails }) {
     e.preventDefault();
     getCocktails(newCocktail)
     .then((data) => {
-      console.log(data)
-      setCocktails(data)});
+      console.log('data ---->',data)
+      setCocktails(data.drinks)});
   };
 
   return (
