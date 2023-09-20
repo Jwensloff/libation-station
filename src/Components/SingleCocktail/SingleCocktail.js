@@ -27,18 +27,18 @@ function SingleCocktail({
     img,
     // isFavorite,
   };
-  console.log('isFave?',isFavorite)
+  console.log('isFavorite???????',isFavorite)
   return (
     <div className='single-cocktail' id={id}>
-      {isFavorite ? (
+      {!isFavorite ? (
         <button onClick={() => addToFavorites(newCocktail)}>
           <FontAwesomeIcon icon={faStar} />
         </button>
-      ) : (
+       ) : (
         <button onClick={() => deleteFavorite(id)}>
           <FontAwesomeIcon icon={faXmark} />
         </button>
-      )}
+      )} 
       <p>Name: {name}</p>
       <ul className='ingredients-list'>Ingredients:{formattedIngredients}</ul>
       <p>Instructions: {instructions}</p>

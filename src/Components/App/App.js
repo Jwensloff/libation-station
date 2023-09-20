@@ -10,7 +10,7 @@ import FavoritesPage from '../FavoritesPage/FavoritesPage';
 function App() {
   const [cocktails, setCocktails] = useState([]);
   const [favorites, setFavorites] = useState([]);
-  const [isFavorite, setIsFavorite] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(null);
 
   const addToFavorites = (cocktail) => {
     setFavorites([...favorites, cocktail]);
@@ -27,7 +27,9 @@ function App() {
 
   return (
     <div className='App'>
-      <NavBar isFavorite={isFavorite} setIsFavorite={setIsFavorite} />
+      <NavBar 
+      // isFavorite={isFavorite} setIsFavorite={setIsFavorite} 
+      />
       <div className='main'>
         <div className='big-box-border'>
           <Routes>
@@ -37,6 +39,8 @@ function App() {
                 <FavoritesPage
                   favorites={favorites}
                   deleteFavorite={deleteFavorite}
+                  setIsFavorite={setIsFavorite}
+                  isFavorite={isFavorite}
                 />
               }
             />

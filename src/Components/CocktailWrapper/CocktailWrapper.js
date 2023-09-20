@@ -8,7 +8,7 @@ function CocktailWrapper({
   deleteFavorite,
   favorites,
   isFavorite,
- setIsFavorite
+  setIsFavorite
 }) {
   const cocktailComponents = cocktails.map((cocktail) => {
     
@@ -16,6 +16,8 @@ function CocktailWrapper({
     const ingredients = [];
     const measurements = [];
     let finalIngredients = [];
+
+    setIsFavorite(false)
 
     keys.map((key) => {
       if (key.includes('Ingredient') && cocktail[key]) {
@@ -45,7 +47,7 @@ function CocktailWrapper({
         key={cocktail.idDrink}
         favorites={favorites}
         isFavorite={isFavorite}
-        setIsFavorite={setIsFavorite}
+        // setIsFavorite={setIsFavorite}
       />
     );
   });
