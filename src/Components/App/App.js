@@ -1,12 +1,11 @@
 import NavBar from '../NavBar/NavBar';
-import Search from '../Search/Search';
+// import Search from '../Search/Search';
 import './App.css';
 import getCocktails from '../../apiCalls';
 import { useEffect, useState } from 'react';
 import CocktailWrapper from '../CocktailWrapper/CocktailWrapper';
 import { Route, Routes } from 'react-router-dom';
 import FavoritesPage from '../FavoritesPage/FavoritesPage';
-
 function App() {
   const [cocktails, setCocktails] = useState([]);
 
@@ -35,7 +34,12 @@ function App() {
     <div className='App'>
       <NavBar setCocktails={setCocktails} getCocktails={getCocktails} />
       <div className='main'>
-        <div className='img-wrapper'></div>
+       
+        <div className='concentric-rings'>
+          <div class='ring ring3'></div>
+          <div class='ring ring2'></div>
+          <div class='ring ring1'></div>
+        </div>
         <div className='background-color'></div>
 
         <Routes>

@@ -1,8 +1,9 @@
 .single-cocktail{
-  width: 60%;
+  width: 30%;
   /* border: 1px solid black; */
-  background-color: rgba(1,1,1,0.9);
-  color: antiquewhite;
+  background-color: rgba(246,220,172);
+  border: 0.5rem rgba(250,169,104) solid;
+  color: 1,32,78, 0.9;
   border-radius: 5px;
   display: flex;
 }
@@ -18,7 +19,8 @@
 
 .img-container{
   height:10rem;
-  border-radius: 5px;
+  /* border-radius: 5px; */
+  border: 0.5 rgba(248,85,37) solid;
 }
 
 .favorite-btn{
@@ -29,5 +31,4 @@
 
 .ingredients-list{
   list-style-type: none; 
-  
 }

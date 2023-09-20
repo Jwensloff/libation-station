@@ -2,38 +2,50 @@
   text-align: center;
   height: 100%;
   box-sizing: border-box;
+  overflow-y: hidden;
 }
 
 .main {
-  /* background-color: antiquewhite; */
   height: 90vh;
-  /* padding: 1rrem; */
-  overflow-y: hidden;
-
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* justify-content: center; */
-  /* align-items: center; */
 }
 
-.img-wrapper {
-  /* background-color: antiquewhite; */
+.concentric-rings {
   height: 90%;
-  width: 100%;
-  /* border-radius: 5px; */
-  /* padding: 1rem; */
-  box-shadow: inset 0 0 10px rgba(246,220,172, 0.3);
-  background-image: url('../../lorenzo-rui-IJu2BcIdx8I-unsplash.jpg');
-  background-size: auto 100%;
-  background-repeat: no-repeat;
-  background-position: -3rem center;
-  overflow-y: hidden;
+  width: 50%;
+  left: -5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   z-index: -1;
 }
 
-.background-color{
-  background-color: rgb(246,220,172, 0.3);
+.ring {
+  bottom: 0rem;
+  position: absolute;
+  border-radius: 20px;
+}
+
+.ring1 {
+  height: 20rem;
+  width: 40rem;
+  background-color: #ff5733;
+}
+
+.ring2 {
+  height: 30rem;
+  width: 60rem;
+  background-color: #faa968;
+}
+
+.ring3 {
+  height: 40rem;
+  width: 85rem;
+  background-color: #f7cd99;
+}
+
+.background-color {
+  background-color: rgb(246, 220, 172, 0.3);
   height: 90%;
   width: 100%;
   z-index: -1;
