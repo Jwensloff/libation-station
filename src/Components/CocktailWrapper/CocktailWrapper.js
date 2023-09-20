@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import SingleCocktail from '../SingleCocktail/SingleCocktail';
 import './CocktailWrapper.css';
 
@@ -9,6 +10,9 @@ function CocktailWrapper({
   isFavorite,
   setIsFavorite
 }) {
+  useEffect(()=> {
+    setIsFavorite(false)
+  },[])
   const cocktailComponents = cocktails.map((cocktail) => {
     
     const keys = Object.keys(cocktail);
@@ -16,7 +20,6 @@ function CocktailWrapper({
     const measurements = [];
     let finalIngredients = [];
 
-    setIsFavorite(false)
 
     keys.map((key) => {
       if (key.includes('Ingredient') && cocktail[key]) {

@@ -24,7 +24,7 @@ function SingleCocktail({
     instructions,
     img,
   }
-  
+
   return (
     <div className='single-cocktail' id={id}>
       {!isFavorite ? (
