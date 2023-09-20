@@ -16,7 +16,6 @@ function App() {
     return parsedFaves || [];
   });
 
-  const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {
     localStorage.setItem('Favorites', JSON.stringify(favorites));
@@ -45,8 +44,6 @@ function App() {
                 <FavoritesPage
                   favorites={favorites}
                   deleteFavorite={deleteFavorite}
-                  setIsFavorite={setIsFavorite}
-                  isFavorite={isFavorite}
                 />
               }
             />
@@ -63,8 +60,6 @@ function App() {
                     deleteFavorite={deleteFavorite}
                     addToFavorites={addToFavorites}
                     cocktails={cocktails}
-                    isFavorite={isFavorite}
-                    setIsFavorite={setIsFavorite}
                   />
                 </>
               }

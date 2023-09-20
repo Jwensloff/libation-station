@@ -5,12 +5,9 @@ import { useEffect } from 'react';
 function FavoritesPage({
   favorites,
   deleteFavorite,
-  setIsFavorite,
-  isFavorite,
+  
 }) {
-  useEffect(()=> {
-    setIsFavorite(true);
-  },[]) 
+
   const favorited = favorites.map((cocktail) => {
     return (
       <SingleCocktail
@@ -21,7 +18,7 @@ function FavoritesPage({
         img={cocktail.img}
         key={cocktail.id}
         deleteFavorite={deleteFavorite}
-        isFavorite={isFavorite}
+        favorites={favorites}
       />
     );
   });

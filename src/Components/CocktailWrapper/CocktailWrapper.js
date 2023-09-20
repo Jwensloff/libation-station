@@ -7,21 +7,14 @@ function CocktailWrapper({
   addToFavorites,
   deleteFavorite,
   favorites,
-  isFavorite,
-  setIsFavorite
-}) {
-  
-  useEffect(()=> {
-    setIsFavorite(false)
-  },[])
 
+}) {
   const cocktailComponents = cocktails.map((cocktail) => {
     
     const keys = Object.keys(cocktail);
     const ingredients = [];
     const measurements = [];
     let finalIngredients = [];
-
 
     keys.map((key) => {
       if (key.includes('Ingredient') && cocktail[key]) {
@@ -50,7 +43,6 @@ function CocktailWrapper({
         deleteFavorite={deleteFavorite}
         key={cocktail.idDrink}
         favorites={favorites}
-        isFavorite={isFavorite}
       />
     );
   });

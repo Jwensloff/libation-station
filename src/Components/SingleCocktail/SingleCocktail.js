@@ -10,7 +10,8 @@ function SingleCocktail({
   img,
   addToFavorites,
   deleteFavorite,
-  isFavorite
+  favorites,
+  
 }) {
 
   let formattedIngredients = ingredients.map((ingredient) => {
@@ -24,16 +25,20 @@ function SingleCocktail({
     instructions,
     img,
   }
-  console.log('isfavorie?',isFavorite)
+  console.log('faves ---->',favorites)
 
+  const checkIsFavorite = (id) => {
+    const isFave = favorites.find(favorite => favorite.id === id)
+    if(isFave){
+      return true
+    } else {
+      return false
+    }
+  }
 
-  // If cocktail is in local storage (favorites )
-  // --> id favorite is true and render the remove favorite button 
-
-  
   return (
     <div className='single-cocktail' id={id}>
-      {!isFavorite ? (
+      {!checkIsFavorite(id) ? (
         <button onClick={() => addToFavorites(newCocktail)}>
           <FontAwesomeIcon icon={faStar} />
         </button>
