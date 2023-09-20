@@ -3,7 +3,6 @@ import './CocktailWrapper.css';
 
 function CocktailWrapper({
   cocktails,
-  setFavorites,
   addToFavorites,
   deleteFavorite,
   favorites,
@@ -47,7 +46,6 @@ function CocktailWrapper({
         key={cocktail.idDrink}
         favorites={favorites}
         isFavorite={isFavorite}
-        // setIsFavorite={setIsFavorite}
       />
     );
   });

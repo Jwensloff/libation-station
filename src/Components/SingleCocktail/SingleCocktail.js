@@ -1,7 +1,6 @@
 import './SingleCocktail.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faXmark } from '@fortawesome/free-solid-svg-icons';
-import { useState } from 'react';
 <FontAwesomeIcon icon={faXmark} />;
 function SingleCocktail({
   name,
@@ -11,7 +10,6 @@ function SingleCocktail({
   img,
   addToFavorites,
   deleteFavorite,
-  favorites,
   isFavorite
 }) {
 
@@ -25,9 +23,8 @@ function SingleCocktail({
     ingredients,
     instructions,
     img,
-    // isFavorite,
-  };
-  console.log('isFavorite???????',isFavorite)
+  }
+  
   return (
     <div className='single-cocktail' id={id}>
       {!isFavorite ? (

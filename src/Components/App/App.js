@@ -23,12 +23,9 @@ function App() {
     setFavorites(filteredCocktails);
   };
 
-  console.log('faves', favorites);
-
   return (
     <div className='App'>
       <NavBar 
-      // isFavorite={isFavorite} setIsFavorite={setIsFavorite} 
       />
       <div className='main'>
         <div className='big-box-border'>
