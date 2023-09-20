@@ -1,0 +1,23 @@
+.form,
+.input {
+  height: 3rem;
+}
+
+.input-btn{
+  height: 3rem;
+  margin-left: 1rem;
+  width: 5rem;
+  border-radius: 5px;
+  background-color: rgb(246,220,172);
+}
+
+.input{
+  width: 12rem;
+  border-radius: 5px;
+}
+
+.input-btn:hover{
+  background-color: rgba(1,32,78, 0.95);
+  cursor: pointer;
+  color: rgb(246,220,172); 
+}

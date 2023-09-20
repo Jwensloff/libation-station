@@ -1,9 +1,37 @@
-import './FavoritesPage.css'
+import './FavoritesPage.css';
+import SingleCocktail from '../SingleCocktail/SingleCocktail';
+import { useEffect } from 'react';
 
-function FavoritesPage () {
-  return (<div>
-    this is the favorites page
-  </div>)
+function FavoritesPage({
+  favorites,
+  deleteFavorite,
+  
+}) {
+
+  const favorited = favorites.map((cocktail) => {
+    return (
+      <SingleCocktail
+        name={cocktail.name}
+        id={cocktail.id}
+        ingredients={cocktail.ingredients}
+        instructions={cocktail.instructions}
+        img={cocktail.img}
+        key={cocktail.id}
+        deleteFavorite={deleteFavorite}
+        favorites={favorites}
+      />
+    );
+  });
+
+  return (
+    <div className='favorited-grid'>
+      {favorites.length === 0 ? (
+        <div>You don't have any favorites yet</div>
+      ) : (
+        <div>{favorited}</div>
+      )}
+    </div>
+  );
 }
 
-export default FavoritesPage
+export default FavoritesPage;

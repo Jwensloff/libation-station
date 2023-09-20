@@ -1,14 +1,14 @@
+import { useEffect } from 'react';
 import SingleCocktail from '../SingleCocktail/SingleCocktail';
 import './CocktailWrapper.css';
 
 function CocktailWrapper({
   cocktails,
-  setFavorites,
   addToFavorites,
   deleteFavorite,
+  favorites,
 }) {
   const cocktailComponents = cocktails.map((cocktail) => {
-    
     const keys = Object.keys(cocktail);
     const ingredients = [];
     const measurements = [];
@@ -22,7 +22,7 @@ function CocktailWrapper({
         measurements.push(cocktail[key]);
       }
       measurements.map((measurement, index) => {
-        let ing = `${measurement}${ingredients[index]}`;
+        let ing = `${measurement} ${ingredients[index]}`;
         if (!finalIngredients.includes(ing)) {
           finalIngredients.push(ing);
         }
@@ -40,6 +40,7 @@ function CocktailWrapper({
         addToFavorites={addToFavorites}
         deleteFavorite={deleteFavorite}
         key={cocktail.idDrink}
+        favorites={favorites}
       />
     );
   });

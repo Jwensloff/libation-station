@@ -1,16 +1,42 @@
+@font-face {
+  font-family: 'life-saver';
+  src: url('../../Assets/Fonts/life-savers/LifeSavers-Regular.ttf') format('woff2'), /* Modern browsers */
+}
+
 .single-cocktail{
-  /* width: 40%; */
-  /* border: 1px solid black; */
-  background-color: rgba(1,1,1,0.9);
-  color: antiquewhite;
+  width: 30%;
+  background-color: #028391;
+  border: 0.5rem #01204E solid;
+  color: 1,32,78, 0.9;
   border-radius: 5px;
+  display: flex;
+}
+
+.info-container{
+  position:relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
 }
 
 .img-container{
   height:10rem;
+  /* border-radius: 5px; */
+}
+
+.favorite-btn{
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
 }
 
 .ingredients-list{
   list-style-type: none; 
+}
 
+.name{
+  font-family: 'life-saver';
+  color: #F6DCAC;
 }

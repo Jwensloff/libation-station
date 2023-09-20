@@ -1,28 +1,57 @@
 .App {
   text-align: center;
   height: 100%;
+  box-sizing: border-box;
+  overflow-y: hidden;
 }
 
 .main {
-  /* background-color: antiquewhite; */
-  height: 93vh;
-  /* padding: 1rrem; */
-  /* background-image: url('../../16447785_v945-tang-09-a.jpg'); */
-  /* background-size: cover; */
-  /* background-repeat: no-repeat; */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  height: 90vh;
 }
 
-.big-box-border {
-  background-color: antiquewhite;
+.concentric-rings {
   height: 90%;
-  width: 90%;
-  border-radius: 5px;
-  padding: 1rem;
-  /* overflow-y: hidden; */
+  width: 50%;
+  left: -5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: -1;
+}
+
+.ring {
+  bottom: 0rem;
+  position: absolute;
+  border-radius: 20px;
+}
+
+.ring1 {
+  height: 20rem;
+  width: 80rem;
+  background-color: #ff5733;
+}
+
+.ring2 {
+  height: 30rem;
+  width: 100rem;
+  background-color: #faa968;
+}
+
+.ring3 {
+  height: 40rem;
+  width: 130rem;
+  background-color: #f7cd99;
+}
+
+.background-color {
+  background-color: rgb(246, 220, 172, 0.5);
+  height: 90%;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  overflow-y: hidden;
+  right: 0rem;
 }
 /* 
 @media (prefers-reduced-motion: no-preference) {
