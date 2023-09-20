@@ -28,24 +28,24 @@
 
 .ring1 {
   height: 20rem;
-  width: 40rem;
+  width: 80rem;
   background-color: #ff5733;
 }
 
 .ring2 {
   height: 30rem;
-  width: 60rem;
+  width: 100rem;
   background-color: #faa968;
 }
 
 .ring3 {
   height: 40rem;
-  width: 85rem;
+  width: 130rem;
   background-color: #f7cd99;
 }
 
 .background-color {
-  background-color: rgb(246, 220, 172, 0.3);
+  background-color: rgb(246, 220, 172, 0.5);
   height: 90%;
   width: 100%;
   z-index: -1;

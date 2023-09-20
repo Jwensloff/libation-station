@@ -49,7 +49,7 @@ function SingleCocktail({
             <FontAwesomeIcon icon={faStar} />
           </button>
         )}
-        <p>{name}</p>
+        <h2 className='name'>{name}</h2>
         {/* <ul className='ingredients-list'>Ingredients: {formattedIngredients}</ul>
       <p>Instructions: {instructions}</p> */}
       </div>

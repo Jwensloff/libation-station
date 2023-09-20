@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import './Search.css';
+import { useNavigate } from 'react-router-dom';
 
 function Search({ setCocktails, getCocktails }) {
   const [newCocktail, setNewCocktail] = useState('');
+
+  const navigate = useNavigate();
 
   const searchForCocktail = (e) => {
     e.preventDefault();
@@ -10,17 +13,21 @@ function Search({ setCocktails, getCocktails }) {
       setCocktails(data.drinks);
       setNewCocktail('');
     });
+    navigate('/')
   };
 
   return (
-    <form>
+    <form className='form'>
       <input
+        className='input'
         type='text'
-        placeholder='Search recipes here'
+        placeholder='Search cocktails here'
         value={newCocktail}
         onChange={(e) => setNewCocktail(e.target.value)}
       />
-      <button onClick={(e) => searchForCocktail(e)}>Search</button>
+      <button className='input-btn' onClick={(e) => searchForCocktail(e)}>
+        Search
+      </button>
     </form>
   );
 }

@@ -1,8 +1,12 @@
+@font-face {
+  font-family: 'life-saver';
+  src: url('../../Assets/Fonts/life-savers/LifeSavers-Regular.ttf') format('woff2'), /* Modern browsers */
+}
+
 .single-cocktail{
   width: 30%;
-  /* border: 1px solid black; */
-  background-color: rgba(246,220,172);
-  border: 0.5rem rgba(250,169,104) solid;
+  background-color: #028391;
+  border: 0.5rem #01204E solid;
   color: 1,32,78, 0.9;
   border-radius: 5px;
   display: flex;
@@ -20,7 +24,6 @@
 .img-container{
   height:10rem;
   /* border-radius: 5px; */
-  border: 0.5 rgba(248,85,37) solid;
 }
 
 .favorite-btn{
@@ -31,4 +34,9 @@
 
 .ingredients-list{
   list-style-type: none; 
+}
+
+.name{
+  font-family: 'life-saver';
+  color: #F6DCAC;
 }
