@@ -11,11 +11,9 @@ function SingleCocktail({
   addToFavorites,
   deleteFavorite,
   favorites,
-  
 }) {
-
   let formattedIngredients = ingredients.map((ingredient) => {
-    return <li>{ingredient}</li>;
+    return <li key={ingredient}>{ingredient}</li>;
   });
 
   const newCocktail = {
@@ -24,33 +22,37 @@ function SingleCocktail({
     ingredients,
     instructions,
     img,
-  }
-  console.log('faves ---->',favorites)
+  };
 
   const checkIsFavorite = (id) => {
-    const isFave = favorites.find(favorite => favorite.id === id)
-    if(isFave){
-      return true
+    const isFave = favorites.find((favorite) => favorite.id === id);
+    if (isFave) {
+      return true;
     } else {
-      return false
+      return false;
     }
-  }
+  };
 
   return (
-    <div className='single-cocktail' id={id}>
-      {!checkIsFavorite(id) ? (
-        <button onClick={() => addToFavorites(newCocktail)}>
-          <FontAwesomeIcon icon={faStar} />
-        </button>
-       ) : (
-        <button onClick={() => deleteFavorite(id)}>
-          <FontAwesomeIcon icon={faXmark} />
-        </button>
-      )} 
-      <p>Name: {name}</p>
-      <ul className='ingredients-list'>Ingredients:{formattedIngredients}</ul>
-      <p>Instructions: {instructions}</p>
+    <div className='single-cocktail' id={id} key={id}>
       <img className='img-container' src={img} alt={name} />
+      <div className='info-container'>
+        {checkIsFavorite(id) ? (
+          <button className='favorite-btn' onClick={() => deleteFavorite(id)}>
+            <FontAwesomeIcon icon={faXmark} />
+          </button>
+        ) : (
+          <button
+            className='favorite-btn'
+            onClick={() => addToFavorites(newCocktail)}
+          >
+            <FontAwesomeIcon icon={faStar} />
+          </button>
+        )}
+        <p>{name}</p>
+        {/* <ul className='ingredients-list'>Ingredients: {formattedIngredients}</ul>
+      <p>Instructions: {instructions}</p> */}
+      </div>
     </div>
   );
 }

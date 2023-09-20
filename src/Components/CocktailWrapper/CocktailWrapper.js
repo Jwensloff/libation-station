@@ -7,10 +7,8 @@ function CocktailWrapper({
   addToFavorites,
   deleteFavorite,
   favorites,
-
 }) {
   const cocktailComponents = cocktails.map((cocktail) => {
-    
     const keys = Object.keys(cocktail);
     const ingredients = [];
     const measurements = [];

@@ -16,7 +16,6 @@ function App() {
     return parsedFaves || [];
   });
 
-
   useEffect(() => {
     localStorage.setItem('Favorites', JSON.stringify(favorites));
   }, [favorites]);
@@ -34,38 +33,39 @@ function App() {
 
   return (
     <div className='App'>
-      <NavBar />
+      <NavBar setCocktails={setCocktails} getCocktails={getCocktails} />
       <div className='main'>
-        <div className='big-box-border'>
-          <Routes>
-            <Route
-              path='/favorites'
-              element={
-                <FavoritesPage
+        <div className='img-wrapper'></div>
+        <div className='background-color'></div>
+
+        <Routes>
+          <Route
+            path='/favorites'
+            element={
+              <FavoritesPage
+                favorites={favorites}
+                deleteFavorite={deleteFavorite}
+              />
+            }
+          />
+          <Route
+            path='/'
+            element={
+              <>
+                {/* <Search */}
+                {/* // setCocktails={setCocktails} */}
+                {/* // getCocktails={getCocktails} */}
+                {/* /> */}
+                <CocktailWrapper
                   favorites={favorites}
                   deleteFavorite={deleteFavorite}
+                  addToFavorites={addToFavorites}
+                  cocktails={cocktails}
                 />
-              }
-            />
-            <Route
-              path='/'
-              element={
-                <>
-                  <Search
-                    setCocktails={setCocktails}
-                    getCocktails={getCocktails}
-                  />
-                  <CocktailWrapper
-                    favorites={favorites}
-                    deleteFavorite={deleteFavorite}
-                    addToFavorites={addToFavorites}
-                    cocktails={cocktails}
-                  />
-                </>
-              }
-            />
-          </Routes>
-        </div>
+              </>
+            }
+          />
+        </Routes>
       </div>
     </div>
   );
