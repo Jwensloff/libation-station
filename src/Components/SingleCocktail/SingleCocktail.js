@@ -24,7 +24,13 @@ function SingleCocktail({
     instructions,
     img,
   }
+  console.log('isfavorie?',isFavorite)
 
+
+  // If cocktail is in local storage (favorites )
+  // --> id favorite is true and render the remove favorite button 
+
+  
   return (
     <div className='single-cocktail' id={id}>
       {!isFavorite ? (

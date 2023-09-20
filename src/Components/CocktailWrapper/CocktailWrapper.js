@@ -10,9 +10,11 @@ function CocktailWrapper({
   isFavorite,
   setIsFavorite
 }) {
+  
   useEffect(()=> {
     setIsFavorite(false)
   },[])
+
   const cocktailComponents = cocktails.map((cocktail) => {
     
     const keys = Object.keys(cocktail);
