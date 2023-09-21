@@ -4,6 +4,7 @@ import Search from '../Search/Search';
 import img from '../../Assets/cocktail-svg.svg';
 
 function NavBar({ setCocktails, getCocktails, isError, setError }) {
+  
   return (
     <nav className='nav-bar'>
       <div className='cocktial-container'>

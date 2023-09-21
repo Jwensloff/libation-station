@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import './Search.css';
 import { useNavigate } from 'react-router-dom';
-import Error from '../Error/Error';
 
 function Search({ setCocktails, getCocktails, error, setError }) {
   const [newCocktail, setNewCocktail] = useState('');
@@ -24,7 +23,10 @@ function Search({ setCocktails, getCocktails, error, setError }) {
           setCocktails(data.drinks);
           setNewCocktail('');
         })
-        .catch((error) => console.log(error));
+        .catch((error) => {
+          console.log(error);
+          setError({ error: true, message: '404, Page not found' });
+        });
       navigate('/');
     }
   };

@@ -35,7 +35,6 @@ function App() {
   return (
     <div className='App'>
       <NavBar
-        error={error}
         setError={setError}
         setCocktails={setCocktails}
         getCocktails={getCocktails}
@@ -53,6 +52,7 @@ function App() {
             path='/favorites'
             element={
               <FavoritesPage
+              setError={setError}
                 favorites={favorites}
                 deleteFavorite={deleteFavorite}
               />

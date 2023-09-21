@@ -12,7 +12,6 @@ function Error({error}) {
         </div>
       </div>
     </div>
-  
   );
 }
 

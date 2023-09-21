@@ -2,11 +2,10 @@ import './FavoritesPage.css';
 import SingleCocktail from '../SingleCocktail/SingleCocktail';
 import { useEffect } from 'react';
 
-function FavoritesPage({
-  favorites,
-  deleteFavorite,
-  
-}) {
+function FavoritesPage({ favorites, deleteFavorite, setError }) {
+  useEffect(() => {
+    setError({ error: false, message: '' });
+  }, [favorites]);
 
   const favorited = favorites.map((cocktail) => {
     return (
@@ -24,13 +23,23 @@ function FavoritesPage({
   });
 
   return (
-    <div className='favorited-grid'>
+    <>
       {favorites.length === 0 ? (
-        <div>You don't have any favorites yet</div>
+        <div className='mesage-container container'>
+          <div className='outter-border container'>
+            <div className='inner-border container'>
+              <div className='error-message container'>
+                <p>'You don't have any favorites yet'</p>
+              </div>
+            </div>
+          </div>
+        </div>
       ) : (
-        <div>{favorited}</div>
+        <div className='favorited-grid'>
+          <div>{favorited}</div>
+        </div>
       )}
-    </div>
+    </>
   );
 }
 
