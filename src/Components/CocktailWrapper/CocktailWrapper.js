@@ -1,14 +1,24 @@
 import { useEffect } from 'react';
 import SingleCocktail from '../SingleCocktail/SingleCocktail';
 import './CocktailWrapper.css';
-
 function CocktailWrapper({
   cocktails,
   addToFavorites,
   deleteFavorite,
   favorites,
+  setError,
 }) {
-  const cocktailComponents = cocktails.map((cocktail) => {
+
+  useEffect(() => {
+    if (!cocktails) {
+      setError({
+        error: true,
+        message: "Appologies, we don't recognize that cocktail",
+      });
+    }
+  }, [cocktails]);
+
+  const cocktailComponents = cocktails&&cocktails.map((cocktail) => {
     const keys = Object.keys(cocktail);
     const ingredients = [];
     const measurements = [];

@@ -6,9 +6,11 @@ import { useEffect, useState } from 'react';
 import CocktailWrapper from '../CocktailWrapper/CocktailWrapper';
 import { Route, Routes } from 'react-router-dom';
 import FavoritesPage from '../FavoritesPage/FavoritesPage';
+import Error from '../Error/Error';
+
 function App() {
   const [cocktails, setCocktails] = useState([]);
-
+  const [error, setError] = useState({ error: false, message: '' });
   const [favorites, setFavorites] = useState(() => {
     const savedFaves = localStorage.getItem('Favorites');
     const parsedFaves = JSON.parse(savedFaves);
@@ -32,21 +34,25 @@ function App() {
 
   return (
     <div className='App'>
-      <NavBar setCocktails={setCocktails} getCocktails={getCocktails} />
+      <NavBar
+        setError={setError}
+        setCocktails={setCocktails}
+        getCocktails={getCocktails}
+      />
       <div className='main'>
-       
         <div className='concentric-rings'>
           <div className='ring ring3'></div>
           <div className='ring ring2'></div>
           <div className='ring ring1'></div>
         </div>
         <div className='background-color'></div>
-
+        {error.error && <Error error={error}/>}
         <Routes>
           <Route
             path='/favorites'
             element={
               <FavoritesPage
+              setError={setError}
                 favorites={favorites}
                 deleteFavorite={deleteFavorite}
               />
@@ -55,17 +61,16 @@ function App() {
           <Route
             path='/'
             element={
-              <>
-                {/* <Search */}
-                {/* // setCocktails={setCocktails} */}
-                {/* // getCocktails={getCocktails} */}
-                {/* /> */}
-                <CocktailWrapper
-                  favorites={favorites}
-                  deleteFavorite={deleteFavorite}
-                  addToFavorites={addToFavorites}
-                  cocktails={cocktails}
-                />
+              <>                
+                  <CocktailWrapper
+                    error={error}
+                    setError={setError}
+                    favorites={favorites}
+                    deleteFavorite={deleteFavorite}
+                    addToFavorites={addToFavorites}
+                    cocktails={cocktails}
+                  />
+              
               </>
             }
           />

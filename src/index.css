@@ -18,3 +18,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@media screen and (max-width: 1080px) {
+  .map_container {
+    grid-column: 3 / span 2;
+  }
+
+  
+}
+
+@media screen and (max-width: 600px) {
+  
+}
