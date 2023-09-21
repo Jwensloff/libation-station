@@ -45,7 +45,7 @@
 }
 
 .background-color {
-  background-color: rgb(246, 220, 172, 0.5);
+  /* background-color: rgb(246, 220, 172, 0.5); */
   height: 90%;
   width: 100%;
   z-index: -1;

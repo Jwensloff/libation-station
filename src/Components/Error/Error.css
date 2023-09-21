@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  position: absolute;
+  top: 5rem;
+}
+
+.mesage-container {
+  width: 100%;
+  height: 100%;
+}
+
+.outter-border {
+  background-color: rgba(49, 124, 158);
+  height: 25rem;
+  width: 50%;
+}
+
+.inner-border {
+  background-color: #02627b;
+  height: 20rem;
+  width: 85%;
+}
+
+.error-message {
+  width: 85%;
+  height: 15rem;
+  background-color: #01204e;
+  /* border: rgb(49, 124, 158); */
+  color: #f6dcac;
+}

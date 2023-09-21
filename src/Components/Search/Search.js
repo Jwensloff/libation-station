@@ -1,19 +1,35 @@
 import { useState } from 'react';
 import './Search.css';
 import { useNavigate } from 'react-router-dom';
+import Error from '../Error/Error';
 
-function Search({ setCocktails, getCocktails }) {
+function Search({ setCocktails, getCocktails, error, setError }) {
   const [newCocktail, setNewCocktail] = useState('');
 
   const navigate = useNavigate();
+  const regex = /^[a-zA-Z\s-]*$/;
 
   const searchForCocktail = (e) => {
     e.preventDefault();
-    getCocktails(newCocktail).then((data) => {
-      setCocktails(data.drinks);
+    setError({ error: false, message: '' });
+    if (!newCocktail.match(regex)) {
+      setError({ error: true, message: 'Please enter a valid cocktail' });
       setNewCocktail('');
-    });
-    navigate('/')
+      return;
+    } else {
+      let trimmedInput = newCocktail.trim();
+      getCocktails(trimmedInput)
+        .then((data) => {
+          if(!data){
+            setError({ error: true, message: 'Cocktail does not exist' });
+            return
+          }
+          setCocktails(data.drinks);
+          setNewCocktail('');
+        })
+        .catch((error) => console.log(error));
+      navigate('/');
+    }
   };
 
   return (
