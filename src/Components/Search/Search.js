@@ -10,6 +10,7 @@ function Search({ setCocktails, getCocktails, error, setError }) {
 
   const searchForCocktail = (e) => {
     e.preventDefault();
+    navigate('/');
     setError({ error: false, message: '' });
     setCocktails([]);
     if (!newCocktail.match(regex)) {
@@ -17,7 +18,9 @@ function Search({ setCocktails, getCocktails, error, setError }) {
       setNewCocktail('');
       return;
     } else {
+
       let trimmedInput = newCocktail.trim();
+
       getCocktails(trimmedInput)
         .then((data) => {
           setCocktails(data.drinks);
@@ -27,7 +30,6 @@ function Search({ setCocktails, getCocktails, error, setError }) {
           console.log(error);
           setError({ error: true, message: '404, Page not found' });
         });
-      navigate('/');
     }
   };
 

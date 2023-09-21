@@ -1,6 +1,7 @@
 .App {
   text-align: center;
-  min-height: 100%;
+  min-height: 100vh;
+  width: 100;
   box-sizing: border-box;
   overflow-y: hidden;
 }
@@ -10,17 +11,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .concentric-rings {
-  height: 90%;
-  width: 50%;
-  left: -5rem;
+  min-height: 90%;
+  width: 95%;
+  left: -1rem;
+  bottom: 0rem;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   position: absolute;
   z-index: -1;
+  overflow-y: hidden;
 }
 
 .ring {
@@ -30,26 +35,26 @@
 }
 
 .ring1 {
-  height: 20rem;
-  width: 80rem;
+  min-height: 60%;
+  min-width: 60%;
   background-color: #ff5733;
 }
 
 .ring2 {
-  height: 30rem;
-  width: 100rem;
+  min-height: 80%;
+  min-width: 80%;
   background-color: #faa968;
 }
 
 .ring3 {
-  height: 40rem;
-  width: 130rem;
+  min-height: 100%;
+  min-width: 100%;
   background-color: #f7cd99;
 }
 
 .background-color {
   /* background-color: rgb(246, 220, 172, 0.5); */
-  height: 90%;
+  min-height: 90%;
   width: 100%;
   z-index: -1;
   position: absolute;
@@ -57,6 +62,10 @@
   right: 0rem;
 }
 
+.app-content{
+  position: relative;
+  z-index: 1;
+}
 /* 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

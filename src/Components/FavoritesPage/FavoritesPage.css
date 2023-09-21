@@ -1,5 +1,11 @@
-.favorited-grid{
-  display: flex;
-  flex-direction: column;
+.favorited-view{
+  overflow-y: auto;
+  height: 90vh;
+  scrollbar-width: none; 
+  -webkit-scrollbar-width: none; 
+}
+
+.favorited-view::-webkit-scrollbar {
+  display: none; 
 }
 

@@ -46,22 +46,23 @@ function App() {
           <div className='ring ring1'></div>
         </div>
         <div className='background-color'></div>
-        {error.error && <Error error={error}/>}
-        <Routes>
-          <Route
-            path='/favorites'
-            element={
-              <FavoritesPage
-              setError={setError}
-                favorites={favorites}
-                deleteFavorite={deleteFavorite}
-              />
-            }
-          />
-          <Route
-            path='/'
-            element={
-              <>                
+        <div className='app-content'>
+          {error.error && <Error error={error} />}
+          <Routes>
+            <Route
+              path='/favorites'
+              element={
+                <FavoritesPage
+                  setError={setError}
+                  favorites={favorites}
+                  deleteFavorite={deleteFavorite}
+                />
+              }
+            />
+            <Route
+              path='/'
+              element={
+                <>
                   <CocktailWrapper
                     error={error}
                     setError={setError}
@@ -70,11 +71,11 @@ function App() {
                     addToFavorites={addToFavorites}
                     cocktails={cocktails}
                   />
-              
-              </>
-            }
-          />
-        </Routes>
+                </>
+              }
+            />
+          </Routes>
+        </div>
       </div>
     </div>
   );
