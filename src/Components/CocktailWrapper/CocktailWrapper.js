@@ -8,6 +8,7 @@ function CocktailWrapper({
   favorites,
   setError,
 }) {
+
   useEffect(() => {
     if (!cocktails) {
       setError({
@@ -15,7 +16,7 @@ function CocktailWrapper({
         message: "Appologies, we don't recognize that cocktail",
       });
     }
-  }, []);
+  }, [cocktails]);
 
   const cocktailComponents = cocktails&&cocktails.map((cocktail) => {
     const keys = Object.keys(cocktail);

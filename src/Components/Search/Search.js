@@ -12,6 +12,7 @@ function Search({ setCocktails, getCocktails, error, setError }) {
   const searchForCocktail = (e) => {
     e.preventDefault();
     setError({ error: false, message: '' });
+    setCocktails([]);
     if (!newCocktail.match(regex)) {
       setError({ error: true, message: 'Please enter a valid cocktail' });
       setNewCocktail('');
@@ -20,10 +21,6 @@ function Search({ setCocktails, getCocktails, error, setError }) {
       let trimmedInput = newCocktail.trim();
       getCocktails(trimmedInput)
         .then((data) => {
-          if(!data){
-            setError({ error: true, message: 'Cocktail does not exist' });
-            return
-          }
           setCocktails(data.drinks);
           setNewCocktail('');
         })
