@@ -1,5 +1,4 @@
 describe('Homepage to favoriting', () => {
-
   beforeEach(() => {
     cy.intercept(
       'GET',
@@ -11,6 +10,7 @@ describe('Homepage to favoriting', () => {
   });
 
   it('Should allow a user to search for cocktails and click the dropdown button', () => {
+    cy.url().should('eq', 'http://localhost:3000/');
     cy.get('.title').should('contain', 'Libation Station');
     cy.get('.form').should('exist');
     cy.get('.home-btn').should('exist');
@@ -18,6 +18,8 @@ describe('Homepage to favoriting', () => {
     cy.get('.see-faves-btn').should('exist');
     cy.get('.cocktail-wrapper').should('have.length', 1);
     cy.get('.form').get("input[name='input']").type('Margarita');
+    cy.get("input[name='input']").should('have.value', 'Margarita');
+
     cy.get('.input-btn').click();
     cy.wait('@cocktailData').then((interception) => {
       expect(interception.response.statusCode).to.equal(200);
@@ -48,6 +50,7 @@ describe('Homepage to favoriting', () => {
     cy.get('#16158').find('.favorite-btn').click();
     cy.get('.see-faves-btn').click();
     cy.get('.see-faves-btn').should('have.class', 'active');
+    cy.url().should('eq', 'http://localhost:3000/favorites');
     cy.get('.outter-card-border').should('have.length', 2);
     cy.get('.single-cocktail').first().should('have.id', '11007');
     cy.get('.single-cocktail').last().should('have.id', '16158');
@@ -55,8 +58,9 @@ describe('Homepage to favoriting', () => {
     cy.get('.outter-card-border').should('have.length', 1);
     cy.get('#16158').find('.favorite-btn').click();
     cy.get('.outter-card-border').should('have.length', 0);
-    cy.get('.error-message').contains('You don\'t have any favorites yet')
+    cy.get('.error-message').contains("You don't have any favorites yet");
     cy.get('.home-btn').click();
     cy.get('.home-btn').should('have.class', 'active');
+    cy.url().should('eq', 'http://localhost:3000/');
   });
 });
