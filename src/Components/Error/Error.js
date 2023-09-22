@@ -1,4 +1,6 @@
 import './Error.css';
+import PropTypes from 'prop-types';
+
 
 function Error({ error }) {
   console.log('error --->', error);
@@ -18,4 +20,7 @@ function Error({ error }) {
   );
 }
 
+Error.propTypes = {
+  error: PropTypes.object
+}
 export default Error;

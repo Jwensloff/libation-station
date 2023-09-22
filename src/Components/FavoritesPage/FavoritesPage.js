@@ -1,6 +1,8 @@
 import './FavoritesPage.css';
 import SingleCocktail from '../SingleCocktail/SingleCocktail';
 import { useEffect } from 'react';
+import PropTypes from 'prop-types';
+
 
 function FavoritesPage({ favorites, deleteFavorite, setError }) {
   useEffect(() => {
@@ -41,6 +43,12 @@ function FavoritesPage({ favorites, deleteFavorite, setError }) {
       )}
     </>
   );
+}
+
+FavoritesPage.propTypes = {
+  deleteFavorite: PropTypes.func.isRequired,
+  favorites: PropTypes.array.isRequired,
+  setError: PropTypes.func.isRequired,
 }
 
 export default FavoritesPage;

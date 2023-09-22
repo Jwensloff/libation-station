@@ -7,6 +7,8 @@ import {
   faAngleDown,
 } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
+
 <FontAwesomeIcon icon={faXmark} />;
 function SingleCocktail({
   name,
@@ -98,4 +100,14 @@ function SingleCocktail({
   );
 }
 
+SingleCocktail.propTypes = {
+  name: PropTypes.string,
+  ingredients: PropTypes.array,
+  instructions: PropTypes.array,
+  id: PropTypes.string,
+  img: PropTypes.string,
+  addToFavorites: PropTypes.func.isRequired,
+  deleteFavorite: PropTypes.func.isRequired,
+  favorites: PropTypes.array,
+}
 export default SingleCocktail;
