@@ -1,6 +1,6 @@
 .favorited-view{
   overflow-y: auto;
-  height: 90vh;
+  height: 88vh;
   scrollbar-width: none; 
   -webkit-scrollbar-width: none; 
 }
@@ -9,3 +9,12 @@
   display: none; 
 }
 
+.fave-cocktail-wrapper{
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-gap: 20px; 
+  height: 100%;
+}

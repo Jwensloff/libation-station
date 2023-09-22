@@ -22,7 +22,6 @@
   left: -1rem;
   bottom: 0rem;
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   position: absolute;
   z-index: -1;
@@ -37,13 +36,13 @@
 
 .ring1 {
   min-height: 60%;
-  min-width: 60%;
+  min-width: 90%;
   background-color: #ff5733;
 }
 
 .ring2 {
   min-height: 80%;
-  min-width: 80%;
+  min-width: 95%;
   background-color: #faa968;
 }
 
@@ -54,7 +53,6 @@
 }
 
 .background-color {
-  /* background-color: rgb(246, 220, 172, 0.5); */
   min-height: 90%;
   width: 100%;
   z-index: -1;

@@ -34,26 +34,39 @@ function SingleCocktail({
   };
 
   return (
-    <div className='single-cocktail' id={id} key={id}>
-      <img className='img-container' src={img} alt={name} />
-      <div className='info-container'>
-        {checkIsFavorite(id) ? (
-          <button className='favorite-btn' onClick={() => deleteFavorite(id)}>
-            <FontAwesomeIcon icon={faXmark} />
-          </button>
-        ) : (
-          <button
-            className='favorite-btn'
-            onClick={() => addToFavorites(newCocktail)}
-          >
-            <FontAwesomeIcon icon={faStar} />
-          </button>
-        )}
-        <h2 className='name'>{name}</h2>
-        <ul className='ingredients-list'>Ingredients: {formattedIngredients}</ul>
-      <p>Instructions: {instructions}</p>
+    // <div className='mesage-container card'>
+      <div className='outter-card-border card'>
+        <div className='middle-card-border card'>
+          <div className='inner-card-border card'>
+            <div className='single-cocktail' id={id} key={id}>
+              <img className='img-container' src={img} alt={name} />
+              <div className='info-container'>
+                {checkIsFavorite(id) ? (
+                  <button
+                    className='favorite-btn'
+                    onClick={() => deleteFavorite(id)}
+                  >
+                    <FontAwesomeIcon icon={faXmark} />
+                  </button>
+                ) : (
+                  <button
+                    className='favorite-btn'
+                    onClick={() => addToFavorites(newCocktail)}
+                  >
+                    <FontAwesomeIcon icon={faStar} />
+                  </button>
+                )}
+                <h2 className='name'>{name}</h2>
+                {/* <ul className='ingredients-list'>
+                  Ingredients: {formattedIngredients}
+                </ul>
+                <p>Instructions: {instructions}</p> */}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    // </div>
   );
 }
 

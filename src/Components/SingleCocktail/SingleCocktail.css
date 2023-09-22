@@ -1,42 +1,88 @@
 @font-face {
   font-family: 'life-saver';
-  src: url('../../Assets/Fonts/life-savers/LifeSavers-Regular.ttf') format('woff2'), /* Modern browsers */
+  src: url('../../Assets/Fonts/life-savers/LifeSavers-Regular.ttf')
+    format('woff2'); 
 }
 
-.single-cocktail{
-  width: 30%;
-  background-color: rgb(49, 124, 158);
-  border: 0.5rem #01204E solid;
-  color: 1,32,78, 0.9;
+.single-cocktail {
+  width: 100%;
+  color: #01204e;
   border-radius: 5px;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.info-container{
-  position:relative;
-  display: flex;
+.info-container {
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
-  align-content: center;
-  width: 100%;
+  /* align-content: center; */
+   width: 100%; 
 }
 
-.img-container{
-  height:10rem;
-  /* border-radius: 5px; */
+.img-container {
+  height: 10rem;
+  border-radius: 5px;  
+  /* position: absolute;
+  left: 5rem;
+  top: 4rem; */
 }
 
-.favorite-btn{
+.favorite-btn {
   position: absolute;
   right: 1rem;
   top: 1rem;
 }
 
-.ingredients-list{
-  list-style-type: none; 
+.ingredients-list {
+  list-style-type: none;
 }
 
-.name{
+.name {
   font-family: 'life-saver';
-  color: #F6DCAC;
+  color: #01204e;
+  font-weight: 600;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  /* top: 5rem; */
+  border: none;
+}
+
+.mesage-container {
+  width: 100%;
+}
+
+.outter-card-border {
+  background-color: #01204e;
+  position: relative;
+  height: 90rem;
+  width: 50%;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.middle-card-border {
+  background-color: rgba(49, 124, 158);
+  height: 20rem;
+  width: 85%;
+  padding: 3rem;
+}
+
+.inner-card-border {
+  /* width: 85%; */
+  height: 15rem;
+  background-color: rgba(93, 163, 190, 1);
+  /* border: rgb(49, 124, 158); */
+  color: #f6dcac;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-content: center;
+  width: 100%;
 }
