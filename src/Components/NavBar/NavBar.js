@@ -2,8 +2,9 @@ import { NavLink } from 'react-router-dom';
 import './NavBar.css';
 import Search from '../Search/Search';
 import img from '../../Assets/cocktail-svg.svg';
+import PropTypes from 'prop-types';
 
-function NavBar({ setCocktails, getCocktails, isError, setError }) {
+function NavBar({ setCocktails, getCocktails, setError }) {
   
   return (
     <nav className='nav-bar'>
@@ -15,7 +16,6 @@ function NavBar({ setCocktails, getCocktails, isError, setError }) {
       <Search
         setCocktails={setCocktails}
         getCocktails={getCocktails}
-        isError={isError}
         setError={setError}
       />
         <NavLink className='home-btn' to='/'>
@@ -27,6 +27,12 @@ function NavBar({ setCocktails, getCocktails, isError, setError }) {
       </div>
     </nav>
   );
+}
+
+NavBar.propTypes = {
+  setCocktails: PropTypes.func.isRequired,
+  getCocktails: PropTypes.func.isRequired, 
+  setError: PropTypes.func.isRequired,
 }
 
 export default NavBar;

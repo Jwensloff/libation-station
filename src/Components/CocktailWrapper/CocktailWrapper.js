@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import SingleCocktail from '../SingleCocktail/SingleCocktail';
 import './CocktailWrapper.css';
+import PropTypes from 'prop-types';
+
 function CocktailWrapper({
   cocktails,
   addToFavorites,
@@ -62,4 +64,14 @@ function CocktailWrapper({
     </section>
   );
 }
+
+CocktailWrapper.propTypes = {
+  cocktails: PropTypes.array,
+  addToFavorites: PropTypes.func.isRequired,
+  deleteFavorite: PropTypes.func.isRequired,
+  favorites: PropTypes.array,
+  setError: PropTypes.func.isRequired,
+}
 export default CocktailWrapper;
+
+

@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import './Search.css';
 import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-function Search({ setCocktails, getCocktails, error, setError }) {
+
+function Search({ setCocktails, getCocktails, setError }) {
   const [newCocktail, setNewCocktail] = useState('');
 
   const navigate = useNavigate();
@@ -26,8 +28,7 @@ function Search({ setCocktails, getCocktails, error, setError }) {
           setCocktails(data.drinks);
           setNewCocktail('');
         })
-        .catch((error) => {
-          console.log(error);
+        .catch(() => {
           setError({ error: true, message: '404, Page not found' });
         });
     }
@@ -38,6 +39,7 @@ function Search({ setCocktails, getCocktails, error, setError }) {
       <input
         className='input'
         type='text'
+        name='input'
         placeholder='Search cocktails here'
         value={newCocktail}
         onChange={(e) => setNewCocktail(e.target.value)}
@@ -49,4 +51,9 @@ function Search({ setCocktails, getCocktails, error, setError }) {
   );
 }
 
+Search.propTypes = {
+  setCocktails: PropTypes.func.isRequired,
+  getCocktails: PropTypes.func.isRequired, 
+  setError: PropTypes.func.isRequired,
+}
 export default Search;
