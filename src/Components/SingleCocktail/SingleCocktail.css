@@ -4,7 +4,7 @@
 }
 
 .single-cocktail {
-  width: 100%;
+  width: 75%;
   color: #01204e;
   border-radius: 5px;
   display: flex;
@@ -18,14 +18,18 @@
 }
 
 .img-container {
+  /* margin-left: 1rem; */
   height: 10rem;
   border-radius: 5px;  
+  position: absolute;
+  left: 0rem;
+  top: 0rem
 }
 
 .favorite-btn {
   position: absolute;
-  right: 1rem;
-  top: 1.25rem;
+  right: 0.5rem;
+  top: 0.5rem;
 }
 
 .ingredients-list {
@@ -53,31 +57,34 @@
 .outter-card-border {
   background-color: #01204e;
   position: relative;
-  max-width: 80%;
+  max-width: 60%;
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
 
 .middle-card-border {
   background-color: rgba(49, 124, 158);
-  min-height: 20rem;
-  width: 85%;
+  min-height: 15rem;
+  width: 90%;
   padding: 2rem;
 }
 
 .inner-card-border {
-  min-height: 15rem;
+  min-height: 10rem;
   background-color: rgba(93, 163, 190, 1);
   color: #f6dcac;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-content: center;
   width: 100%;
+  position: relative;
+  padding: 1rem;
 }
 
 .ingredients-list{
   margin: 0.5rem;
 }
+
 .span{
   font-weight: 900;
 }
@@ -86,5 +93,6 @@
   display: flex;
   width: 100%;
   justify-content: center;
+  margin-top: 1rem;
 }
 

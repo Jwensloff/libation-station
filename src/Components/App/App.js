@@ -47,7 +47,7 @@ function App() {
         </div>
         <div className='background-color'></div>
         <div className='app-content'>
-        {error.error && <Error error={error} />}
+          {error.error && <Error error={error} />}
           <Routes>
             <Route
               path='/favorites'
@@ -76,7 +76,7 @@ function App() {
                 </>
               }
             />
-            <Route path='*' element = {<Error />}/> 
+            <Route path='*' element={<Error />} />
           </Routes>
         </div>
       </div>
