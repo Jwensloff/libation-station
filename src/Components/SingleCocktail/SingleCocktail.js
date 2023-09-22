@@ -70,7 +70,7 @@ function SingleCocktail({
               )}
               <div className='name-button-wrapper'>
                 <h2 className='name'>{name}</h2>
-                <button className='btn' onClick={() => toggleInfo()}>
+                <button className='btn drop-down' onClick={() => toggleInfo()}>
                   {expand ? (
                     <FontAwesomeIcon icon={faAngleUp} size='2x'/>
                   ) : (

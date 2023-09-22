@@ -38,6 +38,7 @@ function Search({ setCocktails, getCocktails, error, setError }) {
       <input
         className='input'
         type='text'
+        name='input'
         placeholder='Search cocktails here'
         value={newCocktail}
         onChange={(e) => setNewCocktail(e.target.value)}
