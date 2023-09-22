@@ -18,7 +18,8 @@
   flex-direction: column;
   justify-content: center;
   /* align-content: center; */
-   width: 100%; 
+  margin: 1rem;
+  width: 100%; 
 }
 
 .img-container {
@@ -61,7 +62,7 @@
 .outter-card-border {
   background-color: #01204e;
   position: relative;
-  height: 90rem;
+  /* min-height: 30rem; */
   width: 50%;
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -69,14 +70,14 @@
 
 .middle-card-border {
   background-color: rgba(49, 124, 158);
-  height: 20rem;
+  min-height: 20rem;
   width: 85%;
   padding: 3rem;
 }
 
 .inner-card-border {
   /* width: 85%; */
-  height: 15rem;
+  min-height: 15rem;
   background-color: rgba(93, 163, 190, 1);
   /* border: rgb(49, 124, 158); */
   color: #f6dcac;
@@ -85,4 +86,11 @@
   justify-content: center;
   align-content: center;
   width: 100%;
+}
+
+.ingredients-list{
+  margin: 0.5rem;
+}
+.span{
+  font-weight: 900;
 }
