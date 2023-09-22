@@ -10,7 +10,7 @@ import Error from '../Error/Error';
 function App() {
   const [cocktails, setCocktails] = useState([]);
   const [error, setError] = useState({ error: false, message: '' });
-  
+
   const [favorites, setFavorites] = useState(() => {
     const savedFaves = localStorage.getItem('Favorites');
     const parsedFaves = JSON.parse(savedFaves);
@@ -76,6 +76,7 @@ function App() {
                 </>
               }
             />
+            <Route path='*' element = {<Error />}/> 
           </Routes>
         </div>
       </div>

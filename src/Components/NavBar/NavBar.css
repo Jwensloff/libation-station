@@ -1,53 +1,64 @@
 @font-face {
-  font-family: 'life-saver';
-  src: url('../../Assets/Fonts/life-savers/LifeSavers-Regular.ttf') format('woff2'), /* Modern browsers */
+  font-family: 'airstream';
+  src: url('../../Assets/Fonts/air_americana/ttf/AirAmericanaDEMO-Regular.ttf')
+    format('woff2');
 }
 
-.nav-bar{
+.nav-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  top: 0;
   background-color: rgba(49, 124, 158);
   width: 100%;
   height: 12vh;
 }
 
-.btn-wrapper{
+.btn-wrapper {
   display: flex;
-  /* flex-direction: column; */
+  align-items: center;
 }
 
 .home-btn,
 .see-faves-btn {
   display: flex;
-  color: rgb(246,220,172); 
+  color: rgb(246, 220, 172);
+  margin-left: 1rem;
   min-height: 4rem;
-  width: 9rem;
+  width: 8rem;
   text-decoration: none;
   text-transform: uppercase;
   justify-content: center;
   align-items: center;
   font-size: 1.25rem;
-  font-weight: 500;
-  font-family: 'life-saver';
 }
 
 .home-btn:hover,
 .see-faves-btn:hover {
-  background-color: rgba(1,32,78, 0.95);
+  background-color: rgba(1, 32, 78, 0.95);
   cursor: pointer;
 }
 
 .active {
-  text-decoration: underline rgba(1,32,78, 0.9) 5px;
+  text-decoration: underline rgba(1, 32, 78, 0.9) 5px;
   cursor: default;
 }
 
 .cocktial-container {
-  left: 1rem;
+  display: flex;
+  align-items: end;
+  color: rgb(246, 220, 172);
+  height: 100%;
 }
 
-.cocktail-svg{
- height: 4rem;
+.title {
+  font-family: 'airstream';
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+
+.cocktail-svg {
+  height: 90%;
+  left: 1rem;
+  top: 1rem;
 }

@@ -1,6 +1,11 @@
 import './SingleCocktail.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faXmark } from '@fortawesome/free-solid-svg-icons';
+import {
+  faBookmark,
+  faXmark,
+  faAngleUp,
+  faAngleDown,
+} from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 <FontAwesomeIcon icon={faXmark} />;
 function SingleCocktail({
@@ -37,8 +42,7 @@ function SingleCocktail({
   };
 
   const toggleInfo = () => {
-    const newState = expand ? false : true;
-    setExpand(newState);
+    setExpand(!expand);
   };
 
   return (
@@ -51,23 +55,31 @@ function SingleCocktail({
             <div className='info-container'>
               {checkIsFavorite(id) ? (
                 <button
-                  className='favorite-btn'
+                  className='favorite-btn btn'
                   onClick={() => deleteFavorite(id)}
                 >
-                  <FontAwesomeIcon icon={faXmark} />
+                  <FontAwesomeIcon icon={faXmark} size='2x' style={{ color: '#f6dcac' }}/>
                 </button>
               ) : (
                 <button
-                  className='favorite-btn'
+                  className='favorite-btn btn'
                   onClick={() => addToFavorites(newCocktail)}
                 >
-                  <FontAwesomeIcon icon={faStar} />
+                  <FontAwesomeIcon icon={faBookmark} size='2x' style={{ color: '#f6dcac'}}/>
                 </button>
               )}
-              <h2 className='name'>{name}</h2>
-              <button onClick={() => toggleInfo()}>Toggle</button>
+              <div className='name-button-wrapper'>
+                <h2 className='name'>{name}</h2>
+                <button className='btn' onClick={() => toggleInfo()}>
+                  {expand ? (
+                    <FontAwesomeIcon icon={faAngleUp} size='2x'/>
+                  ) : (
+                    <FontAwesomeIcon icon={faAngleDown} size='2x'/>
+                  )}
+                </button>
+              </div>
               {expand && (
-                <>
+                <div className='show-info'>
                   <ul className='ingredients-list'>
                     <span className='span'>Ingredients:</span>{' '}
                     {formattedIngredients}
@@ -75,7 +87,7 @@ function SingleCocktail({
                   <p>
                     <span className='span'>Instructions:</span> {instructions}
                   </p>
-                </>
+                </div>
               )}
             </div>
           </div>
