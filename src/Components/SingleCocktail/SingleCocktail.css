@@ -1,42 +1,90 @@
-@font-face {
-  font-family: 'life-saver';
-  src: url('../../Assets/Fonts/life-savers/LifeSavers-Regular.ttf') format('woff2'), /* Modern browsers */
+.btn{
+  background: none;
+  cursor: pointer;
 }
 
-.single-cocktail{
-  width: 30%;
-  background-color: rgb(49, 124, 158);
-  border: 0.5rem #01204E solid;
-  color: 1,32,78, 0.9;
+.single-cocktail {
+  width: 100%;
+  color: #01204e;
   border-radius: 5px;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.info-container{
-  position:relative;
+.info-container {
+  margin: 1rem;
+  width: 100%; 
+}
+
+.img-container {
+  height: 10rem;
+  border-radius: 5px;  
+}
+
+.favorite-btn {
+  position: absolute;
+  right: 1rem;
+  top: 1.25rem;
+}
+
+.ingredients-list {
+  list-style-type: none;
+}
+
+.name {
+  color: #01204e;
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+.card {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: none;
+}
+
+.mesage-container {
+  width: 100%;
+}
+
+.outter-card-border {
+  background-color: #01204e;
+  position: relative;
+  max-width: 80%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.middle-card-border {
+  background-color: rgba(49, 124, 158);
+  min-height: 20rem;
+  width: 85%;
+  padding: 2rem;
+}
+
+.inner-card-border {
+  min-height: 15rem;
+  background-color: rgba(93, 163, 190, 1);
+  color: #f6dcac;
+  display: flex;
   justify-content: center;
   align-content: center;
   width: 100%;
 }
 
-.img-container{
-  height:10rem;
-  /* border-radius: 5px; */
-}
-
-.favorite-btn{
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
-}
-
 .ingredients-list{
-  list-style-type: none; 
+  margin: 0.5rem;
+}
+.span{
+  font-weight: 900;
 }
 
-.name{
-  font-family: 'life-saver';
-  color: #F6DCAC;
+.name-button-wrapper{
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }
+

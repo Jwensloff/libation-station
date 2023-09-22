@@ -29,14 +29,14 @@ function FavoritesPage({ favorites, deleteFavorite, setError }) {
           <div className='outter-border container'>
             <div className='inner-border container'>
               <div className='error-message container'>
-                <p>'You don't have any favorites yet'</p>
+                <p>You don't have any favorites yet</p>
               </div>
             </div>
           </div>
         </div>
       ) : (
-        <div className='favorited-grid'>
-          <div>{favorited}</div>
+        <div className='favorited-view'>
+          <div className='fave-cocktail-wrapper'>{favorited}</div>
         </div>
       )}
     </>

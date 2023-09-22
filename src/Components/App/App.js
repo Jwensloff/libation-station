@@ -1,5 +1,4 @@
 import NavBar from '../NavBar/NavBar';
-// import Search from '../Search/Search';
 import './App.css';
 import getCocktails from '../../apiCalls';
 import { useEffect, useState } from 'react';
@@ -11,6 +10,7 @@ import Error from '../Error/Error';
 function App() {
   const [cocktails, setCocktails] = useState([]);
   const [error, setError] = useState({ error: false, message: '' });
+
   const [favorites, setFavorites] = useState(() => {
     const savedFaves = localStorage.getItem('Favorites');
     const parsedFaves = JSON.parse(savedFaves);
@@ -46,35 +46,39 @@ function App() {
           <div className='ring ring1'></div>
         </div>
         <div className='background-color'></div>
-        {error.error && <Error error={error}/>}
-        <Routes>
-          <Route
-            path='/favorites'
-            element={
-              <FavoritesPage
-              setError={setError}
-                favorites={favorites}
-                deleteFavorite={deleteFavorite}
-              />
-            }
-          />
-          <Route
-            path='/'
-            element={
-              <>                
-                  <CocktailWrapper
-                    error={error}
-                    setError={setError}
-                    favorites={favorites}
-                    deleteFavorite={deleteFavorite}
-                    addToFavorites={addToFavorites}
-                    cocktails={cocktails}
-                  />
-              
-              </>
-            }
-          />
-        </Routes>
+        <div className='app-content'>
+        {error.error && <Error error={error} />}
+          <Routes>
+            <Route
+              path='/favorites'
+              element={
+                <FavoritesPage
+                  setError={setError}
+                  favorites={favorites}
+                  deleteFavorite={deleteFavorite}
+                />
+              }
+            />
+            <Route
+              path='/'
+              element={
+                <>
+                  {!error.error && (
+                    <CocktailWrapper
+                      error={error}
+                      setError={setError}
+                      favorites={favorites}
+                      deleteFavorite={deleteFavorite}
+                      addToFavorites={addToFavorites}
+                      cocktails={cocktails}
+                    />
+                  )}
+                </>
+              }
+            />
+            <Route path='*' element = {<Error />}/> 
+          </Routes>
+        </div>
       </div>
     </div>
   );
