@@ -10,7 +10,7 @@
   top: 0;
   background-color: rgba(49, 124, 158);
   width: 100%;
-  height: 10vh;
+  height: 12vh;
 }
 
 .btn-wrapper{
@@ -22,7 +22,7 @@
 .see-faves-btn {
   display: flex;
   color: rgb(246,220,172); 
-  min-height: 5rem;
+  min-height: 4rem;
   width: 9rem;
   text-decoration: none;
   text-transform: uppercase;
@@ -49,5 +49,5 @@
 }
 
 .cocktail-svg{
- height: 5rem;
+ height: 4rem;
 }

@@ -1,6 +1,6 @@
 .home-view {
   overflow-y: auto;
-  height: 90vh;
+  height: 88vh;
   scrollbar-width: none; 
   -webkit-scrollbar-width: none; 
 }
@@ -17,7 +17,6 @@
   align-items: center;
   grid-gap: 20px;
   height: 100%;
-  /* overflow: auto; */
 }
 
 .container {

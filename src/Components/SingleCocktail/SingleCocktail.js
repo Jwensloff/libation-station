@@ -50,8 +50,8 @@ function SingleCocktail({
           </button>
         )}
         <h2 className='name'>{name}</h2>
-        {/* <ul className='ingredients-list'>Ingredients: {formattedIngredients}</ul>
-      <p>Instructions: {instructions}</p> */}
+        <ul className='ingredients-list'>Ingredients: {formattedIngredients}</ul>
+      <p>Instructions: {instructions}</p>
       </div>
     </div>
   );

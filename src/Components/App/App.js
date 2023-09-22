@@ -1,5 +1,4 @@
 import NavBar from '../NavBar/NavBar';
-// import Search from '../Search/Search';
 import './App.css';
 import getCocktails from '../../apiCalls';
 import { useEffect, useState } from 'react';
@@ -11,6 +10,7 @@ import Error from '../Error/Error';
 function App() {
   const [cocktails, setCocktails] = useState([]);
   const [error, setError] = useState({ error: false, message: '' });
+  
   const [favorites, setFavorites] = useState(() => {
     const savedFaves = localStorage.getItem('Favorites');
     const parsedFaves = JSON.parse(savedFaves);
@@ -47,7 +47,7 @@ function App() {
         </div>
         <div className='background-color'></div>
         <div className='app-content'>
-          {error.error && <Error error={error} />}
+        {error.error && <Error error={error} />}
           <Routes>
             <Route
               path='/favorites'
@@ -63,14 +63,16 @@ function App() {
               path='/'
               element={
                 <>
-                  <CocktailWrapper
-                    error={error}
-                    setError={setError}
-                    favorites={favorites}
-                    deleteFavorite={deleteFavorite}
-                    addToFavorites={addToFavorites}
-                    cocktails={cocktails}
-                  />
+                  {!error.error && (
+                    <CocktailWrapper
+                      error={error}
+                      setError={setError}
+                      favorites={favorites}
+                      deleteFavorite={deleteFavorite}
+                      addToFavorites={addToFavorites}
+                      cocktails={cocktails}
+                    />
+                  )}
                 </>
               }
             />
