@@ -14,7 +14,7 @@
 .outter-border {
   background-color: rgba(49, 124, 158);
   height: 25rem;
-  width: 50%;
+  min-width: 75%;
 }
 
 .inner-border {
@@ -27,6 +27,5 @@
   width: 85%;
   height: 15rem;
   background-color: #01204e;
-  /* border: rgb(49, 124, 158); */
   color: #f6dcac;
 }

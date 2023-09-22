@@ -19,8 +19,8 @@
 .concentric-rings {
   min-height: 90%;
   width: 95%;
-  left: -1rem;
   bottom: 0rem;
+  left: 0rem;
   display: flex;
   align-items: center;
   position: absolute;
@@ -31,7 +31,7 @@
 .ring {
   bottom: 0rem;
   position: absolute;
-  border-radius: 20px;
+  border-radius: 0px 20px 0px 0px;
 }
 
 .ring1 {
