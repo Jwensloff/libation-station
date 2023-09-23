@@ -17,9 +17,9 @@
 }
 
 .input-btn:hover {
-  background-color: rgba(1, 32, 78, 0.95);
+  background-color: rgba(93, 163, 190, 1);
   cursor: pointer;
-  color: rgb(246, 220, 172);
+  color: rgba(1, 32, 78, 0.95);
 }
 
 @media screen and (max-width: 1080px) {

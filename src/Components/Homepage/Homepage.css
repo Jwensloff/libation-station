@@ -1,0 +1,55 @@
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  top: 5rem;
+}
+
+.home-mesage-container {
+  width: 100%;
+  min-height: 100%;
+}
+
+.home-outter-border {
+  background-color: #01204e;
+  height: 25rem;
+  min-width: 75%;
+}
+
+.home-inner-border {
+  background-color: rgba(49, 124, 158);
+  height: 20rem;
+  width: 85%;
+}
+
+.home-error-message {
+  display: flex;
+  width: 85%;
+  height: 15rem;
+  background-color: rgba(93, 163, 190, 1);
+  color: #f6dcac;
+}
+
+.cocktail-svg {
+  height: 90%;
+  left: 1rem;
+  top: 1rem;
+}
+
+.text{
+  font-size: 2rem;
+  color: #01204e;
+}
+
+.text-directions{
+  font-size: 1.25rem;;
+  color: #01204e;
+
+}
+
+.home-text-wrapper{
+  display: flex;
+  flex-direction: column;
+}
+

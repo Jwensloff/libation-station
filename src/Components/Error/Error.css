@@ -24,6 +24,8 @@
 }
 
 .error-message {
+  display: flex;
+  flex-direction: column;
   width: 85%;
   height: 15rem;
   background-color: #01204e;

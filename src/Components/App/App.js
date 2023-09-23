@@ -6,11 +6,13 @@ import CocktailWrapper from '../CocktailWrapper/CocktailWrapper';
 import { Route, Routes } from 'react-router-dom';
 import FavoritesPage from '../FavoritesPage/FavoritesPage';
 import Error from '../Error/Error';
+import Search from '../Search/Search';
+import Homepage from '../Homepage/Homepage'
 
 function App() {
   const [cocktails, setCocktails] = useState([]);
   const [error, setError] = useState({ error: false, message: '' });
-
+  const [userMsg, setUserMsg] = useState('');
   const [favorites, setFavorites] = useState(() => {
     const savedFaves = localStorage.getItem('Favorites');
     const parsedFaves = JSON.parse(savedFaves);
@@ -50,17 +52,17 @@ function App() {
           {error.error && <Error error={error} />}
           <Routes>
             <Route
-              path='/favorites'
+              path='libation-station/search'
               element={
-                <FavoritesPage
+                <Search
+                  setCocktails={setCocktails}
+                  getCocktails={getCocktails}
                   setError={setError}
-                  favorites={favorites}
-                  deleteFavorite={deleteFavorite}
                 />
               }
             />
             <Route
-              path='/libation-station/:alcohol'
+              path='libation-station/search/:alcohol'
               element={
                 <>
                   {!error.error && (
@@ -72,6 +74,26 @@ function App() {
                       addToFavorites={addToFavorites}
                       cocktails={cocktails}
                     />
+                  )}
+                </>
+              }
+            />
+            <Route
+              path='libation-station/favorites'
+              element={
+                <FavoritesPage
+                  setError={setError}
+                  favorites={favorites}
+                  deleteFavorite={deleteFavorite}
+                />
+              }
+            />
+            <Route
+              path='/libation-station/home'
+              element={
+                <>
+                  {!error.error && (
+                    <Homepage />
                   )}
                 </>
               }
