@@ -33,6 +33,5 @@ describe('Sad path testing', () => {
     cy.get('.error-message').should('not.exist')
     cy.visit('http://localhost:3000/potato');
     cy.get('.error-message').should('exist').contains('404 page not found')
-
   })
 })
