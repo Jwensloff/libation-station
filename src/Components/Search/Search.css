@@ -22,3 +22,23 @@
   color: rgb(246, 220, 172);
 }
 
+@media screen and (max-width: 1080px) {
+.input{
+  width:10rem;
+}
+}
+
+@media screen and (max-width: 600px) {
+
+  .input{
+    width:7rem;
+  }
+  .input,
+  .input-btn{
+    height: 2rem;
+  }
+  .input-btn{
+width: 4rem;
+margin-left: 0rem;;
+  }
+}

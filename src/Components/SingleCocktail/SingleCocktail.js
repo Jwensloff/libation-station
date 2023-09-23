@@ -103,7 +103,7 @@ function SingleCocktail({
 SingleCocktail.propTypes = {
   name: PropTypes.string,
   ingredients: PropTypes.array,
-  instructions: PropTypes.array,
+  instructions: PropTypes.string,
   id: PropTypes.string,
   img: PropTypes.string,
   addToFavorites: PropTypes.func.isRequired,
