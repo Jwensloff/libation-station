@@ -1,3 +1,5 @@
+/* @import '../../index.css'; */
+
 @font-face {
   font-family: 'airstream';
   src: url('../../Assets/Fonts/air_americana/ttf/AirAmericanaDEMO-Regular.ttf')
@@ -61,4 +63,31 @@
   height: 90%;
   left: 1rem;
   top: 1rem;
+}
+
+
+@media screen and (max-width: 1080px) {
+  .nav-bar{
+display: flex;
+  }
+  .title {
+    font-size: 2rem ;
+  }
+  .cocktail-svg{
+    height: 70%
+  }
+  .home-btn{
+    width: 5rem;
+
+  }
+
+  .see-faves-btn {
+    width: 7rem;
+    margin-right:0.5rem;
+  }
+  .cocktial-container{
+    justify-content: center;
+    align-items: center;
+  }
+  
 }

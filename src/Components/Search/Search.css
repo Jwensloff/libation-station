@@ -22,3 +22,8 @@
   color: rgb(246, 220, 172);
 }
 
+@media screen and (max-width: 1080px) {
+.input{
+  width:10rem;
+}
+}
