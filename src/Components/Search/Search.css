@@ -11,6 +11,11 @@
   background-color: rgb(246, 220, 172);
 }
 
+.user-message{
+  position: absolute;
+  top:7rem;
+}
+
 .input {
   width: 12rem;
   border-radius: 5px;

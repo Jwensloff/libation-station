@@ -11,7 +11,7 @@ function Search({ setCocktails, getCocktails, setError }) {
   const regex = /^[a-zA-Z\s-]*$/;
 useEffect(()=>{
   setError({ error: false, message: '' });
-})
+}, [])
 
   const searchForCocktail = (e) => {
     setUserMsg('')
