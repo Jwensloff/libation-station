@@ -1,18 +1,16 @@
 import { useState } from 'react';
 import './Search.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
 
 function Search({ setCocktails, getCocktails, setError }) {
   const [newCocktail, setNewCocktail] = useState('');
-
+  let alcohol = useParams().alcohol;
   const navigate = useNavigate();
   const regex = /^[a-zA-Z\s-]*$/;
 
   const searchForCocktail = (e) => {
     e.preventDefault();
-    navigate('/');
     setError({ error: false, message: '' });
     setCocktails([]);
     if (!newCocktail.match(regex)) {
@@ -20,10 +18,10 @@ function Search({ setCocktails, getCocktails, setError }) {
       setNewCocktail('');
       return;
     } else {
-
       let trimmedInput = newCocktail.trim();
-
-      getCocktails(trimmedInput)
+      alcohol=trimmedInput
+      navigate(`/libation-station/${alcohol}`);
+      getCocktails(alcohol)
         .then((data) => {
           setCocktails(data.drinks);
           setNewCocktail('');
@@ -53,7 +51,7 @@ function Search({ setCocktails, getCocktails, setError }) {
 
 Search.propTypes = {
   setCocktails: PropTypes.func.isRequired,
-  getCocktails: PropTypes.func.isRequired, 
+  getCocktails: PropTypes.func.isRequired,
   setError: PropTypes.func.isRequired,
-}
+};
 export default Search;

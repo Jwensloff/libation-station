@@ -19,10 +19,10 @@ function NavBar({ setCocktails, getCocktails, setError }) {
         setError={setError}
       />
       <div className='home-fave-btn-wrapper'>
-        <NavLink className='home-btn' to='/'>
+        <NavLink className='home-btn' to='/libation-station'>
           Home
         </NavLink>
-        <NavLink className='see-faves-btn ' to='/favorites'>
+        <NavLink className='see-faves-btn' to='/favorites'>
           Favorites
         </NavLink>
         </div>

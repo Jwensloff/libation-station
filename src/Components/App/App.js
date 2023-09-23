@@ -60,7 +60,7 @@ function App() {
               }
             />
             <Route
-              path='/'
+              path='/libation-station/:alcohol'
               element={
                 <>
                   {!error.error && (
