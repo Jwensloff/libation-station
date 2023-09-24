@@ -32,7 +32,7 @@ describe('Sad path testing', () => {
     cy.get('.input-btn').click();
     cy.wait('@404Error');
     cy.get('.error-message').should('exist').contains('404, Page not found');
-    cy.visit('http://localhost:3000/home');
+    cy.visit('http://localhost:3000/');
     cy.get('.error-message').should('not.exist');
     cy.visit('http://localhost:3000/potato');
     cy.get('.error-message').should('exist').contains('404 page not found');

@@ -6,18 +6,18 @@ describe('Homepage to favoriting', () => {
       { statusCode: 200, fixture: 'dummy_cocktail_data.json' }
     ).as('cocktailData');
 
-    cy.visit('http://localhost:3000/ home');
+    cy.visit('http://localhost:3000/');
   });
 
   it('Should bring a user to the homepage', () => {
-    cy.url().should('eq', 'http://localhost:3000/ home');
+    cy.url().should('eq', 'http://localhost:3000/');
     cy.get('.title').should('contain', 'Libation Station');
     cy.get('.text').should('exist');
     cy.get('.text').should('contain', "It's 5 o'clock somewhere");
   });
 
   it('Should allow a user to search for cocktails and see ingredients', () => {
-    cy.visit('http://localhost:3000/home');
+    cy.visit('http://localhost:3000/');
     cy.get('.search-btn').should('exist');
     cy.get('.search-btn').click();
     cy.get('.form').should('exist');
@@ -29,7 +29,7 @@ describe('Homepage to favoriting', () => {
       expect(interception.response.statusCode).to.equal(200);
     });
     cy.get('.card').should('have.length', 15);
-    cy.url().should('eq', 'http://localhost:3000/ search/Margarita');
+    cy.url().should('eq', 'http://localhost:3000/search/Margarita');
     cy.get('.outter-card-border').should('have.length', 5);
     cy.get('.outter-card-border').first().should('contain', 'Margarita');
     cy.get('.outter-card-border')
@@ -44,7 +44,7 @@ describe('Homepage to favoriting', () => {
   });
 
   it('should allow a user to favorite and unfavorite a cocktail', () => {
-    cy.visit('http://localhost:3000/ home');
+    cy.visit('http://localhost:3000/');
     cy.get('.search-btn').should('exist');
     cy.get('.search-btn').click();
     cy.get('.form').should('exist');
@@ -53,7 +53,7 @@ describe('Homepage to favoriting', () => {
     cy.wait('@cocktailData').then((interception) => {
       expect(interception.response.statusCode).to.equal(200);
     });
-    cy.url().should('eq', 'http://localhost:3000/ search/Margarita');
+    cy.url().should('eq', 'http://localhost:3000/search/Margarita');
     cy.get('.outter-card-border').should('have.length', 5);
     cy.get('#11007').find('.favorite-btn').click();
     cy.get('#16158').find('.favorite-btn').click();
@@ -70,6 +70,6 @@ describe('Homepage to favoriting', () => {
     cy.get('.error-message').contains("You don't have any favorites yet");
     cy.get('.home-btn').click();
     cy.get('.home-btn').should('have.class', 'active');
-    cy.url().should('eq', 'http://localhost:3000/home');
+    cy.url().should('eq', 'http://localhost:3000/');
   });
 });
