@@ -11,15 +11,20 @@
   background-color: rgb(246, 220, 172);
 }
 
+.user-message{
+  position: absolute;
+  top:7rem;
+}
+
 .input {
   width: 12rem;
   border-radius: 5px;
 }
 
 .input-btn:hover {
-  background-color: rgba(1, 32, 78, 0.95);
+  background-color: rgba(93, 163, 190, 1);
   cursor: pointer;
-  color: rgb(246, 220, 172);
+  color: rgba(1, 32, 78, 0.95);
 }
 
 @media screen and (max-width: 1080px) {
@@ -28,7 +33,7 @@
 }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 760px) {
 
   .input{
     width:7rem;

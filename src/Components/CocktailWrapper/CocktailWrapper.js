@@ -10,11 +10,12 @@ function CocktailWrapper({
   favorites,
   setError,
 }) {
+  
   useEffect(() => {
     if (!cocktails) {
       setError({
         error: true,
-        message: "Appologies, we don't recognize that cocktail",
+        message: "Appologies, we don't recognize that cocktail. Try searching again!",
       });
     }
   }, [cocktails]);

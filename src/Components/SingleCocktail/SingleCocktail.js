@@ -14,6 +14,7 @@ function SingleCocktail({
   name,
   ingredients,
   instructions,
+  key,
   id,
   img,
   addToFavorites,
@@ -48,7 +49,6 @@ function SingleCocktail({
   };
 
   return (
-    // <div className='mesage-container card'>
     <div className='outter-card-border card'>
       <div className='middle-card-border card'>
         <div className='inner-card-border card'>
@@ -96,7 +96,6 @@ function SingleCocktail({
         </div>
       </div>
     </div>
-    // </div>
   );
 }
 
@@ -106,8 +105,9 @@ SingleCocktail.propTypes = {
   instructions: PropTypes.string,
   id: PropTypes.string,
   img: PropTypes.string,
-  addToFavorites: PropTypes.func.isRequired,
+  addToFavorites: PropTypes.func,
   deleteFavorite: PropTypes.func.isRequired,
   favorites: PropTypes.array,
+  key: PropTypes.string
 }
 export default SingleCocktail;

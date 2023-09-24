@@ -6,11 +6,13 @@ import CocktailWrapper from '../CocktailWrapper/CocktailWrapper';
 import { Route, Routes } from 'react-router-dom';
 import FavoritesPage from '../FavoritesPage/FavoritesPage';
 import Error from '../Error/Error';
+import Search from '../Search/Search';
+import Homepage from '../Homepage/Homepage'
 
 function App() {
   const [cocktails, setCocktails] = useState([]);
   const [error, setError] = useState({ error: false, message: '' });
-
+  const [userMsg, setUserMsg] = useState('');
   const [favorites, setFavorites] = useState(() => {
     const savedFaves = localStorage.getItem('Favorites');
     const parsedFaves = JSON.parse(savedFaves);
@@ -50,7 +52,33 @@ function App() {
           {error.error && <Error error={error} />}
           <Routes>
             <Route
-              path='/favorites'
+              path='libation-station/search'
+              element={
+                <Search
+                  setCocktails={setCocktails}
+                  getCocktails={getCocktails}
+                  setError={setError}
+                />
+              }
+            />
+            <Route
+              path='libation-station/search/:alcohol'
+              element={
+                <>
+                  {!error.error && (
+                    <CocktailWrapper
+                      setError={setError}
+                      favorites={favorites}
+                      deleteFavorite={deleteFavorite}
+                      addToFavorites={addToFavorites}
+                      cocktails={cocktails}
+                    />
+                  )}
+                </>
+              }
+            />
+            <Route
+              path='libation-station/favorites'
               element={
                 <FavoritesPage
                   setError={setError}
@@ -60,18 +88,11 @@ function App() {
               }
             />
             <Route
-              path='/'
+              path='/libation-station/home'
               element={
                 <>
                   {!error.error && (
-                    <CocktailWrapper
-                      error={error}
-                      setError={setError}
-                      favorites={favorites}
-                      deleteFavorite={deleteFavorite}
-                      addToFavorites={addToFavorites}
-                      cocktails={cocktails}
-                    />
+                    <Homepage />
                   )}
                 </>
               }
