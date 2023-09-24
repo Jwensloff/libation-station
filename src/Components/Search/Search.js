@@ -25,7 +25,7 @@ useEffect(()=>{
     } else {
       let trimmedInput = newCocktail.trim();
       alcohol = trimmedInput;
-      navigate(`/libation-station/search/${alcohol}`);
+      navigate(`/search/${alcohol}`);
       getCocktails(alcohol)
         .then((data) => {
           setCocktails(data.drinks);

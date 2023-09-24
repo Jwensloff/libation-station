@@ -52,7 +52,7 @@ function App() {
           {error.error && <Error error={error} />}
           <Routes>
             <Route
-              path='libation-station/search'
+              path='/search'
               element={
                 <Search
                   setCocktails={setCocktails}
@@ -62,7 +62,7 @@ function App() {
               }
             />
             <Route
-              path='libation-station/search/:alcohol'
+              path='/search/:alcohol'
               element={
                 <>
                   {!error.error && (
@@ -78,7 +78,7 @@ function App() {
               }
             />
             <Route
-              path='libation-station/favorites'
+              path='/favorites'
               element={
                 <FavoritesPage
                   setError={setError}
@@ -88,7 +88,7 @@ function App() {
               }
             />
             <Route
-              path='/libation-station/home'
+              path=''
               element={
                 <>
                   {!error.error && (
