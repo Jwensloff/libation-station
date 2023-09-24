@@ -40,6 +40,8 @@
 .text{
   font-size: 2rem;
   color: #01204e;
+  font-weight: 600;
+
 }
 
 .text-directions{
@@ -53,3 +55,47 @@
   flex-direction: column;
 }
 
+@media screen and (max-width: 1080px) {
+  .nav-bar {
+    display: flex;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .cocktail-svg {
+    height: 70%;
+  }
+  .home-btn {
+    width: 5rem;
+  }
+
+  .see-faves-btn {
+    width: 7rem;
+    margin-right: 0.5rem;
+  }
+  .cocktial-container {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .home-container{
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .cocktail-svg {
+    height: 30%;
+  }
+ 
+  
+  .text-directions{
+    font-size: 1rem;;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .home-container{
+    padding: 0rem;
+  }
+}
