@@ -14,6 +14,7 @@ function SingleCocktail({
   name,
   ingredients,
   instructions,
+  key,
   id,
   img,
   addToFavorites,
@@ -107,5 +108,6 @@ SingleCocktail.propTypes = {
   addToFavorites: PropTypes.func,
   deleteFavorite: PropTypes.func.isRequired,
   favorites: PropTypes.array,
+  key: PropTypes.string
 }
 export default SingleCocktail;

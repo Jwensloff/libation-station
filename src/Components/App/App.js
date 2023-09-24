@@ -67,7 +67,6 @@ function App() {
                 <>
                   {!error.error && (
                     <CocktailWrapper
-                      error={error}
                       setError={setError}
                       favorites={favorites}
                       deleteFavorite={deleteFavorite}
