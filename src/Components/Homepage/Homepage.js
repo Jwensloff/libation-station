@@ -1,5 +1,5 @@
 import './Homepage.css';
-import img from '../../../public/cocktail-svg.svg';
+import img from '../../Assets/cocktail-svg.svg';
 
 function Homepage() {
   return (
