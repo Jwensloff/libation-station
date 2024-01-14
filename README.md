@@ -1,4 +1,4 @@
-# Libation Nation
+# Libation Station
 ## 📝 Description
 Do you struggle to find fun recipes for cocktails during fancy dinner parties, date nights, or book clubs? Then Libation Nation is here for you! With Libation Nation you can search for and save cocktail recipes, so you can can have them at your fingertips. 
 
