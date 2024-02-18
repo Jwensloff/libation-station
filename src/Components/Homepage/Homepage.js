@@ -2,6 +2,7 @@ import './Homepage.css';
 import img from '../../Assets/cocktail-svg.svg';
 
 function Homepage() {
+  console.log('hello')
   return (
     <div className='home-mesage-container home-container'>
       <div className='home-outter-border home-container'>

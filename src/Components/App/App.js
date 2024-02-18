@@ -13,6 +13,7 @@ function App() {
   const [cocktails, setCocktails] = useState([]);
   const [error, setError] = useState({ error: false, message: '' });
   const [userMsg, setUserMsg] = useState('');
+  
   const [favorites, setFavorites] = useState(() => {
     const savedFaves = localStorage.getItem('Favorites');
     const parsedFaves = JSON.parse(savedFaves);

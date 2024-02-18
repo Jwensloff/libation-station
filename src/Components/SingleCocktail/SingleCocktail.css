@@ -57,6 +57,7 @@
   background-color: #01204e;
   position: relative;
   max-width: 60%;
+  min-width: 60%;
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
@@ -112,7 +113,7 @@
   .inner-card-border {
     justify-content: center;
     max-width: 100;
-    padding-top: 2.5rem;;
+    padding-top: 2.5rem;
   }
   .middle-card-border {
     padding: 1rem;
@@ -124,8 +125,8 @@
   }
 
   .ingredients-list {
-    text-align: center; 
-    padding: 0; 
+    text-align: center;
+    padding: 0;
     list-style: none;
   }
 

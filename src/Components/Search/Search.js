@@ -9,7 +9,7 @@ function Search({ setCocktails, getCocktails, setError }) {
   let alcohol = useParams().alcohol;
   const navigate = useNavigate();
   const regex = /^[a-zA-Z\s-]*$/;
-useEffect(()=>{
+  useEffect(()=>{
   setError({ error: false, message: '' });
 }, [])
 
